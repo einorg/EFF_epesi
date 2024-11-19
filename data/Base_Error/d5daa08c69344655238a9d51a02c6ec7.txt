@@ -1,0 +1,137 @@
+who=20
+type=256
+message=Type: E_USER_ERROR (256)
+Message: Argument 0 is not number(%f): <ul><li>UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d</li><li>Array
+(
+    [0] => 519.2651.7
+    [1] => 23653
+)
+</li></ul>
+File: /home/effector2/ftp/epesi/include/database.php
+Line=170
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "Argument 0 is not number(%f): <ul><li>UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d</li><li>Array
+(
+    [0] => 519.2651.7
+    [1] => 23653
+)
+</li></ul>", "/home/effector2/ftp/epesi/include/database.php", 170, Array ("UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d", Array (#2), Array (#5), "UPDATE eff_constructions_data_1 SET f_cost_1_value=", 0, 2, "%f"))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 170
+    function called: trigger_error("Argument 0 is not number(%f): <ul><li>UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d</li><li>Array
+(
+    [0] => 519.2651.7
+    [1] => 23653
+)
+</li></ul>", 256)
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 377
+    function called: TypeControl("UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d", "Array (#2)")
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1485
+    function called: Execute("UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d", Array ("519.2651.7", 23653))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 1501
+    function called: update_record("eff_constructions", 23653, Array (#168))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 1097
+    function called: update_record(23653, Array (#168))
+
+[PHP core called function]
+    function called: view_entry("edit", "23653")
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "view_entry"), Array ("edit", "23653"))
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("edit", "23653"), "view_entry")
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("edit", "23653"), "view_entry")
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_f3f07ac04f6c3af7f4c89fdb177850d9=&submited=1&title_old=termo%201%2C0%208mm%20%2F%20ALU%2024%20Ar%20%2F%20float%205mm&surcharge=%5B%5D&jm_old=m2&qty_old=370.35&unit_price_old=190.79&model_proc=0&gabaryt_proc=0&glass_1_price=51.7&glass_1_waste=0.35&glass_1_c_zak=51.7&glass_1_esg=&glass_1_lam=&glass_1_obrob=&glass_2_price=27.5&glass_2_waste=0.25&glass_2_c_zak=27.5&glass_2_esg=&glass_2_lam=&glass_2_obrob=&glass_3_price=&glass_3_waste=0&glass_3_c_zak=&glass_3_esg=&glass_3_lam=&glass_3_obrob=&glass_4_price=&glass_4_waste=0&glass_4_c_zak=&glass_4_esg=&glass_4_lam=&glass_4_obrob=&fields_1=&fields_2=&fields_3=&glazing_bars_price=0&blunting=&edge_grinding=&edge_polishing=&blunting_of_corners=&holes_to_20mm=&holes_from_20mm=&cutouts_at_the_edges=&cutouts_in_the_corners=&other_cutouts=&test_hst=&tvg=&nodimensions=0&calculated=1&summary=&transport_m2=28.15&parameters=&katalog_szyba_1=LG08N1&katalog_ramka_1=&katalog_szyba_2=FL05&katalog_ramka_2=&katalog_szyba_3=&katalog_ramka_3=&katalog_szyba_4=&lp=2&title=termo%201%2C0%208mm%20%2F%20ALU%2024%20Ar%20%2F%20float%205mm&contract_name=4472&contract_name__search=&waste=16.31&profit=15&jm=m2&qty=370.35&unit_price=190.79&opcja=0&qty_option=0&freeze_price=0&m2=370.35&mb=1624.5&model=&positions=72%09610%091080%0A72%09965%091455%0A72%09675%091455%0A63%09610%091080%0A63%09680%091460%0A72%09610%091080&description=&calculations=ZAOKR.G%C3%93RA(((370.35%5Bm2%5D%20*%20((1%5Bwsp%C3%B3%C5%82czynnik%20transportu%20od%20liczby%20szyb%5D%20*%2028.15%5Bdostawa%20za%20m2%5D)%20%2B(25)%5Bbaza%5D%20%2B((4%5BRamka%20komora%201%5D))%20%2B%20(((51.7%5Bcena%20zakup%20szyba%201%5D*1.5384615384615%5Bodpad%20brutto%20S1%5D*1.15%5Bzysk%5D)%20%2B%20(27.5%5Bcena%20zakup%20szyba%202%5D*1.3333333333333%5Bodpad%20brutto%20S2%5D*1.15%5Bzysk%5D))))%5Bm2_total_price%5D))%2F370.35%5Bm2%5D%3B0)%0A%0A%3DZAOKR.G%C3%93RA(((370.35%20*%20((1%20*%2028.15)%20%2B(25)%20%2B((4))%20%2B%20(((51.7*1.5384615384615*1.15)%20%2B%20(27.5*1.3333333333333*1.15))))))%2F370.35%3B0)&glass_1=51&glass_1__search=&glass_1_special_price=&glass_1_waste_manual=&frame_1=167&frame_1__search=&frame_thickness_1=24&frame_1_price=4&glass_2=2&glass_2__search=&glass_2_special_price=&glass_2_waste_manual=&frame_2=&frame_2__search=&frame_thickness_2=&frame_2_price=0&glass_3=&glass_3__search=&glass_3_special_price=&glass_3_waste_manual=&frame_3=&frame_3__search=&frame_thickness_3=&frame_3_price=0&glass_4=&glass_4__search=&glass_4_special_price=&glass_4_waste_manual=&gas=1&gas_price=0&rack=&glazing_bar_1=&glazing_bar_2=&glazing_bar_3=&g1_blunting=0&g1_edge_grinding=0&g1_edge_grinding_and_polishing=0&g1_edge_polishing=0&g1_blunting_of_corners=0&g1_holes_to_20mm=0&g1_holes_from_20mm=0&g1_cutouts_at_the_edges=0&g1_cutouts_in_the_corners=0&g1_other_cutouts=0&g1_test_hst=0&g1_tvg=0&g2_blunting=0&g2_edge_grinding=0&g2_edge_polishing=0&g2_edge_grinding_and_polishing=0&g2_blunting_of_corners=0&g2_test_hst=0&g2_tvg=0&g3_blunting=0&g3_edge_grinding=0&g3_edge_grinding_and_polishing=0&g3_edge_polishing=0&g3_blunting_of_corners=0&g3_test_hst=0&g3_tvg=0&g4_blunting=0&g4_edge_grinding=0&g4_edge_polishing=0&g4_edge_grinding_and_polishing=0&g4_blunting_of_corners=0&g4_test_hst=0&g4_tvg=0&silikon_depth=&silikon_width=&silikon_height=&dc_zespolenie=55&dc_klejenie=115&tas__nortona=8&odpad_na_masach=20&robocizna_izo=&robocizna_rama=&total_profit=20&silikon_cost_per_m2=&silikon_cost_per_mb=&cost_1_name=5%20tafli%20do%2028%20tafli%20(4%20pakiety)&cost_1_value=5*19%2C26*51%2C7&cost_2_name=&cost_2_value=&cost_3_name=&cost_3_value=&cost_4_name=&cost_4_value=&cost_5_name=&cost_5_value=&cost_6_name=&cost_6_value=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7C31a964509534a0a9e9797247aaea4b27_r", "")
+
+
+error file=/home/effector2/ftp/epesi/include/database.php
+error line=170
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "Argument 0 is not number(%f): <ul><li>UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d</li><li>Array
+(
+    [0] => 519.2651.7
+    [1] => 23653
+)
+</li></ul>", "/home/effector2/ftp/epesi/include/database.php", 170, Array ("UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d", Array (#2), Array (#5), "UPDATE eff_constructions_data_1 SET f_cost_1_value=", 0, 2, "%f"))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 170
+    function called: trigger_error("Argument 0 is not number(%f): <ul><li>UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d</li><li>Array
+(
+    [0] => 519.2651.7
+    [1] => 23653
+)
+</li></ul>", 256)
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 377
+    function called: TypeControl("UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d", "Array (#2)")
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1485
+    function called: Execute("UPDATE eff_constructions_data_1 SET f_cost_1_value=%f WHERE id=%d", Array ("519.2651.7", 23653))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 1501
+    function called: update_record("eff_constructions", 23653, Array (#168))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 1097
+    function called: update_record(23653, Array (#168))
+
+[PHP core called function]
+    function called: view_entry("edit", "23653")
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "view_entry"), Array ("edit", "23653"))
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("edit", "23653"), "view_entry")
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("edit", "23653"), "view_entry")
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_f3f07ac04f6c3af7f4c89fdb177850d9=&submited=1&title_old=termo%201%2C0%208mm%20%2F%20ALU%2024%20Ar%20%2F%20float%205mm&surcharge=%5B%5D&jm_old=m2&qty_old=370.35&unit_price_old=190.79&model_proc=0&gabaryt_proc=0&glass_1_price=51.7&glass_1_waste=0.35&glass_1_c_zak=51.7&glass_1_esg=&glass_1_lam=&glass_1_obrob=&glass_2_price=27.5&glass_2_waste=0.25&glass_2_c_zak=27.5&glass_2_esg=&glass_2_lam=&glass_2_obrob=&glass_3_price=&glass_3_waste=0&glass_3_c_zak=&glass_3_esg=&glass_3_lam=&glass_3_obrob=&glass_4_price=&glass_4_waste=0&glass_4_c_zak=&glass_4_esg=&glass_4_lam=&glass_4_obrob=&fields_1=&fields_2=&fields_3=&glazing_bars_price=0&blunting=&edge_grinding=&edge_polishing=&blunting_of_corners=&holes_to_20mm=&holes_from_20mm=&cutouts_at_the_edges=&cutouts_in_the_corners=&other_cutouts=&test_hst=&tvg=&nodimensions=0&calculated=1&summary=&transport_m2=28.15&parameters=&katalog_szyba_1=LG08N1&katalog_ramka_1=&katalog_szyba_2=FL05&katalog_ramka_2=&katalog_szyba_3=&katalog_ramka_3=&katalog_szyba_4=&lp=2&title=termo%201%2C0%208mm%20%2F%20ALU%2024%20Ar%20%2F%20float%205mm&contract_name=4472&contract_name__search=&waste=16.31&profit=15&jm=m2&qty=370.35&unit_price=190.79&opcja=0&qty_option=0&freeze_price=0&m2=370.35&mb=1624.5&model=&positions=72%09610%091080%0A72%09965%091455%0A72%09675%091455%0A63%09610%091080%0A63%09680%091460%0A72%09610%091080&description=&calculations=ZAOKR.G%C3%93RA(((370.35%5Bm2%5D%20*%20((1%5Bwsp%C3%B3%C5%82czynnik%20transportu%20od%20liczby%20szyb%5D%20*%2028.15%5Bdostawa%20za%20m2%5D)%20%2B(25)%5Bbaza%5D%20%2B((4%5BRamka%20komora%201%5D))%20%2B%20(((51.7%5Bcena%20zakup%20szyba%201%5D*1.5384615384615%5Bodpad%20brutto%20S1%5D*1.15%5Bzysk%5D)%20%2B%20(27.5%5Bcena%20zakup%20szyba%202%5D*1.3333333333333%5Bodpad%20brutto%20S2%5D*1.15%5Bzysk%5D))))%5Bm2_total_price%5D))%2F370.35%5Bm2%5D%3B0)%0A%0A%3DZAOKR.G%C3%93RA(((370.35%20*%20((1%20*%2028.15)%20%2B(25)%20%2B((4))%20%2B%20(((51.7*1.5384615384615*1.15)%20%2B%20(27.5*1.3333333333333*1.15))))))%2F370.35%3B0)&glass_1=51&glass_1__search=&glass_1_special_price=&glass_1_waste_manual=&frame_1=167&frame_1__search=&frame_thickness_1=24&frame_1_price=4&glass_2=2&glass_2__search=&glass_2_special_price=&glass_2_waste_manual=&frame_2=&frame_2__search=&frame_thickness_2=&frame_2_price=0&glass_3=&glass_3__search=&glass_3_special_price=&glass_3_waste_manual=&frame_3=&frame_3__search=&frame_thickness_3=&frame_3_price=0&glass_4=&glass_4__search=&glass_4_special_price=&glass_4_waste_manual=&gas=1&gas_price=0&rack=&glazing_bar_1=&glazing_bar_2=&glazing_bar_3=&g1_blunting=0&g1_edge_grinding=0&g1_edge_grinding_and_polishing=0&g1_edge_polishing=0&g1_blunting_of_corners=0&g1_holes_to_20mm=0&g1_holes_from_20mm=0&g1_cutouts_at_the_edges=0&g1_cutouts_in_the_corners=0&g1_other_cutouts=0&g1_test_hst=0&g1_tvg=0&g2_blunting=0&g2_edge_grinding=0&g2_edge_polishing=0&g2_edge_grinding_and_polishing=0&g2_blunting_of_corners=0&g2_test_hst=0&g2_tvg=0&g3_blunting=0&g3_edge_grinding=0&g3_edge_grinding_and_polishing=0&g3_edge_polishing=0&g3_blunting_of_corners=0&g3_test_hst=0&g3_tvg=0&g4_blunting=0&g4_edge_grinding=0&g4_edge_polishing=0&g4_edge_grinding_and_polishing=0&g4_blunting_of_corners=0&g4_test_hst=0&g4_tvg=0&silikon_depth=&silikon_width=&silikon_height=&dc_zespolenie=55&dc_klejenie=115&tas__nortona=8&odpad_na_masach=20&robocizna_izo=&robocizna_rama=&total_profit=20&silikon_cost_per_m2=&silikon_cost_per_mb=&cost_1_name=5%20tafli%20do%2028%20tafli%20(4%20pakiety)&cost_1_value=5*19%2C26*51%2C7&cost_2_name=&cost_2_value=&cost_3_name=&cost_3_value=&cost_4_name=&cost_4_value=&cost_5_name=&cost_5_value=&cost_6_name=&cost_6_value=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7C31a964509534a0a9e9797247aaea4b27_r", "")
+

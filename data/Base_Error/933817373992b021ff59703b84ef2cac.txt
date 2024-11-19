@@ -1,0 +1,103 @@
+who=1
+type=256
+message=Type: E_USER_ERROR (256)
+Message: mysqli error: [1213: Deadlock found when trying to get lock; try restarting transaction] in ADODB_Error_Handler(INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---'), )
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+Line=79
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1213: Deadlock found when trying to get lock; try restarting transaction] in ADODB_Error_Handler(INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---'), )
+", "/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php", 79, Array ("mysqli", "ADODB_Error_Handler", 1213, "Deadlock found when trying to get lock; try restarting transaction", "INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')", false, Object (ADODB_mysqli), "mysqli error: [1213: Deadlock found when trying to get lock; try restarting transaction] in ADODB_Error_Handler(INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---'), )
+"))
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1213: Deadlock found when trying to get lock; try restarting transaction] in ADODB_Error_Handler(INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---'), )
+", 256)
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 299
+    function called: ADODB_Error_Handler("mysqli", "ADODB_Error_Handler", 1213, "Deadlock found when trying to get lock; try restarting transaction", "INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')", false, "Object (ADODB_mysqli)")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1235
+    function called: ADODB_TransMonitor("mysqli", "EXECUTE", 1213, "Deadlock found when trying to get lock; try restarting transaction", "INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')", false, "\"Object (ADODB_mysqli)\"")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1175
+    function called: _Execute("INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')")
+
+[PHP core called function]
+    function called: Execute("INSERT INTO recordbrowser_search_index VALUES (?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?)", Array (#40))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 213
+    function called: call_user_func_array(Array (Object (ADODB_mysqli), "Execute"), Array ("INSERT INTO recordbrowser_search_index VALUES (?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?)", Array (#40)))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 378
+    function called: call_with_retry("Execute", Array ("INSERT INTO recordbrowser_search_index VALUES (?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?)", Array (#40)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 3764
+    function called: Execute("INSERT INTO recordbrowser_search_index VALUES (%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s)", Array (#40))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 3817
+    function called: index_record("crm_meeting", Array (#18), Array (#14), 14)
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/indexer.php
+    line 17
+    function called: indexer(30, 0)
+
+
+error file=/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+error line=79
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1213: Deadlock found when trying to get lock; try restarting transaction] in ADODB_Error_Handler(INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---'), )
+", "/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php", 79, Array ("mysqli", "ADODB_Error_Handler", 1213, "Deadlock found when trying to get lock; try restarting transaction", "INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')", false, Object (ADODB_mysqli), "mysqli error: [1213: Deadlock found when trying to get lock; try restarting transaction] in ADODB_Error_Handler(INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---'), )
+"))
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1213: Deadlock found when trying to get lock; try restarting transaction] in ADODB_Error_Handler(INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---'), )
+", 256)
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 299
+    function called: ADODB_Error_Handler("mysqli", "ADODB_Error_Handler", 1213, "Deadlock found when trying to get lock; try restarting transaction", "INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')", false, "Object (ADODB_mysqli)")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1235
+    function called: ADODB_TransMonitor("mysqli", "EXECUTE", 1213, "Deadlock found when trying to get lock; try restarting transaction", "INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')", false, "\"Object (ADODB_mysqli)\"")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1175
+    function called: _Execute("INSERT INTO recordbrowser_search_index VALUES (14, 9349, 3, 'siedziba kielce'),(14, 9349, 5, '2021-12-06'),(14, 9349, 6, '---'),(14, 9349, 7, '-1'),(14, 9349, 8, 'roman springer'),(14, 9349, 9, '---'),(14, 9349, 10, 'zamknięty'),(14, 9349, 11, 'średni'),(14, 9349, 12, 'publiczny, tylko do odczytu'),(14, 9349, 16, '---')")
+
+[PHP core called function]
+    function called: Execute("INSERT INTO recordbrowser_search_index VALUES (?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?)", Array (#40))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 213
+    function called: call_user_func_array(Array (Object (ADODB_mysqli), "Execute"), Array ("INSERT INTO recordbrowser_search_index VALUES (?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?)", Array (#40)))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 378
+    function called: call_with_retry("Execute", Array ("INSERT INTO recordbrowser_search_index VALUES (?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?)", Array (#40)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 3764
+    function called: Execute("INSERT INTO recordbrowser_search_index VALUES (%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s),(%d, %d, %d, %s)", Array (#40))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 3817
+    function called: index_record("crm_meeting", Array (#18), Array (#14), 14)
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/indexer.php
+    line 17
+    function called: indexer(30, 0)
+

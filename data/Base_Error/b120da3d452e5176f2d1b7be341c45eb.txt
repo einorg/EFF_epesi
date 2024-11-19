@@ -1,0 +1,544 @@
+who=6
+type=256
+message=Type: E_USER_ERROR (256)
+Message: Argument 17 is not number(%f): <ul><li>INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)</li><li>Array
+(
+    [0] => 2021-07-19 16:54:43
+    [1] => 6
+    [2] => 1
+    [3] => 16287
+    [4] => 33.1 [6,38mm] / SWISSPACER Advance, kolor: czarny - 18 Ar / termo 1,0 4mm ESG AE
+    [5] => 3139
+    [6] => []
+    [7] => 30
+    [8] => m2
+    [9] => 4368.82
+    [10] => 162
+    [11] => m2
+    [12] => 4368.82
+    [13] => 162
+    [14] => 0
+    [15] => 0
+    [16] => 0
+    [17] => 1 043.98
+    [18] => 112716.939
+    [19] => 0
+    [20] => 0
+    [21] => 158.96
+    [22] => 707748.84
+    [23] => 3.96
+    [24] => 406
+    [25] => 37
+    [26] => 0.2
+    [27] => 37
+    [28] => 60
+    [29] => 18
+    [30] => 10
+    [31] => 29
+    [32] => 43
+    [33] => 0.2
+    [34] => 27
+    [35] => 16
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 1
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 0
+    [45] => 0
+    [46] => 0
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 0
+    [52] => 0
+    [53] => 0
+    [54] => 0
+    [55] => 0
+    [56] => 0
+    [57] => 0
+    [58] => 0
+    [59] => 0
+    [60] => 0
+    [61] => 0
+    [62] => 0
+    [63] => 0
+    [64] => 0
+    [65] => 0
+    [66] => 0
+    [67] => 0
+    [68] => 0
+    [69] => 0
+    [70] => 0
+    [71] => 0
+    [72] => 0
+    [73] => 0
+    [74] => 0
+    [75] => 0
+    [76] => 0
+    [77] => 1
+    [78] => 41.33
+    [79] => 61.48
+    [80] => 5
+    [81] => 15
+    [82] => 15
+    [83] => VL331
+    [84] => LG04T1
+)
+</li></ul>
+File: /home/effector2/ftp/epesi/include/database.php
+Line=170
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "Argument 17 is not number(%f): <ul><li>INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)</li><li>Array
+(
+    [0] => 2021-07-19 16:54:43
+    [1] => 6
+    [2] => 1
+    [3] => 16287
+    [4] => 33.1 [6,38mm] / SWISSPACER Advance, kolor: czarny - 18 Ar / termo 1,0 4mm ESG AE
+    [5] => 3139
+    [6] => []
+    [7] => 30
+    [8] => m2
+    [9] => 4368.82
+    [10] => 162
+    [11] => m2
+    [12] => 4368.82
+    [13] => 162
+    [14] => 0
+    [15] => 0
+    [16] => 0
+    [17] => 1 043.98
+    [18] => 112716.939
+    [19] => 0
+    [20] => 0
+    [21] => 158.96
+    [22] => 707748.84
+    [23] => 3.96
+    [24] => 406
+    [25] => 37
+    [26] => 0.2
+    [27] => 37
+    [28] => 60
+    [29] => 18
+    [30] => 10
+    [31] => 29
+    [32] => 43
+    [33] => 0.2
+    [34] => 27
+    [35] => 16
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 1
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 0
+    [45] => 0
+    [46] => 0
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 0
+    [52] => 0
+    [53] => 0
+    [54] => 0
+    [55] => 0
+    [56] => 0
+    [57] => 0
+    [58] => 0
+    [59] => 0
+    [60] => 0
+    [61] => 0
+    [62] => 0
+    [63] => 0
+    [64] => 0
+    [65] => 0
+    [66] => 0
+    [67] => 0
+    [68] => 0
+    [69] => 0
+    [70] => 0
+    [71] => 0
+    [72] => 0
+    [73] => 0
+    [74] => 0
+    [75] => 0
+    [76] => 0
+    [77] => 1
+    [78] => 41.33
+    [79] => 61.48
+    [80] => 5
+    [81] => 15
+    [82] => 15
+    [83] => VL331
+    [84] => LG04T1
+)
+</li></ul>", "/home/effector2/ftp/epesi/include/database.php", 170, Array ("INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)", Array (#85), Array (#171), "INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,", 17, 85, "%f"))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 170
+    function called: trigger_error("Argument 17 is not number(%f): <ul><li>INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)</li><li>Array
+(
+    [0] => 2021-07-19 16:54:43
+    [1] => 6
+    [2] => 1
+    [3] => 16287
+    [4] => 33.1 [6,38mm] / SWISSPACER Advance, kolor: czarny - 18 Ar / termo 1,0 4mm ESG AE
+    [5] => 3139
+    [6] => []
+    [7] => 30
+    [8] => m2
+    [9] => 4368.82
+    [10] => 162
+    [11] => m2
+    [12] => 4368.82
+    [13] => 162
+    [14] => 0
+    [15] => 0
+    [16] => 0
+    [17] => 1 043.98
+    [18] => 112716.939
+    [19] => 0
+    [20] => 0
+    [21] => 158.96
+    [22] => 707748.84
+    [23] => 3.96
+    [24] => 406
+    [25] => 37
+    [26] => 0.2
+    [27] => 37
+    [28] => 60
+    [29] => 18
+    [30] => 10
+    [31] => 29
+    [32] => 43
+    [33] => 0.2
+    [34] => 27
+    [35] => 16
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 1
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 0
+    [45] => 0
+    [46] => 0
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 0
+    [52] => 0
+    [53] => 0
+    [54] => 0
+    [55] => 0
+    [56] => 0
+    [57] => 0
+    [58] => 0
+    [59] => 0
+    [60] => 0
+    [61] => 0
+    [62] => 0
+    [63] => 0
+    [64] => 0
+    [65] => 0
+    [66] => 0
+    [67] => 0
+    [68] => 0
+    [69] => 0
+    [70] => 0
+    [71] => 0
+    [72] => 0
+    [73] => 0
+    [74] => 0
+    [75] => 0
+    [76] => 0
+    [77] => 1
+    [78] => 41.33
+    [79] => 61.48
+    [80] => 5
+    [81] => 15
+    [82] => 15
+    [83] => VL331
+    [84] => LG04T1
+)
+</li></ul>", 256)
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 377
+    function called: TypeControl("INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)", "Array (#85)")
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1376
+    function called: Execute("INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)", Array (#85))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 1089
+    function called: new_record("eff_constructions", Array (#168))
+
+[PHP core called function]
+    function called: view_entry("add", null, Array (#166))
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "view_entry"), Array ("add", null, Array (#166)))
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#166)), "view_entry")
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#166)), "view_entry")
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_7cdd3edda81da3aa0d3eafda9828b36e=&submited=1&title_old=33.1%20%5B6%2C38mm%5D%20%2F%20SWISSPACER%20Advance%2C%20kolor%3A%20czarny%20-%2018%20Ar%20%2F%20termo%201%2C0%204mm%20ESG%20AE&surcharge=%5B%5D&jm_old=m2&qty_old=4368.82&unit_price_old=162&model_proc=0&gabaryt_proc=0&glass_1_price=37&glass_1_waste=0.2&glass_1_c_zak=37&glass_1_esg=&glass_1_lam=&glass_1_obrob=&glass_2_price=43&glass_2_waste=0.2&glass_2_c_zak=27&glass_2_esg=16&glass_2_lam=&glass_2_obrob=&glass_3_price=&glass_3_waste=0&glass_3_c_zak=&glass_3_esg=&glass_3_lam=&glass_3_obrob=&glass_4_price=&glass_4_waste=0&glass_4_c_zak=&glass_4_esg=&glass_4_lam=&glass_4_obrob=&fields_1=&fields_2=&fields_3=&glazing_bars_price=0&blunting=&edge_grinding=&edge_polishing=&blunting_of_corners=&holes_to_20mm=&holes_from_20mm=&cutouts_at_the_edges=&cutouts_in_the_corners=&other_cutouts=&test_hst=&tvg=&nodimensions=0&calculated=1&summary=&transport_m2=3.96&parameters=&katalog_szyba_1=VL331&katalog_ramka_1=&katalog_szyba_2=LG04T1&katalog_ramka_2=&katalog_szyba_3=&katalog_ramka_3=&katalog_szyba_4=&lp=&title=&contract_name=3139&contract_name__search=&waste=&profit=30&jm=m2&qty=4368.82&unit_price=162&opcja=0&qty_option=0&freeze_price=0&m2=1%20043%2C98&mb=&model=&positions=&description=&calculations=&glass_1=406&glass_1__search=&glass_1_special_price=&glass_1_waste_manual=&frame_1=60&frame_1__search=&frame_thickness_1=18&frame_1_price=10&glass_2=29&glass_2__search=&glass_2_special_price=&glass_2_waste_manual=&frame_2=&frame_2__search=&frame_thickness_2=&frame_2_price=0&glass_3=&glass_3__search=&glass_3_special_price=&glass_3_waste_manual=&frame_3=&frame_3__search=&frame_thickness_3=&frame_3_price=0&glass_4=&glass_4__search=&glass_4_special_price=&glass_4_waste_manual=&gas=1&gas_price=0&rack=&glazing_bar_1=&glazing_bar_2=&glazing_bar_3=&g1_blunting=0&g1_edge_grinding=0&g1_edge_grinding_and_polishing=0&g1_edge_polishing=0&g1_blunting_of_corners=0&g1_holes_to_20mm=0&g1_holes_from_20mm=0&g1_cutouts_at_the_edges=0&g1_cutouts_in_the_corners=0&g1_other_cutouts=0&g1_test_hst=0&g1_tvg=0&g2_blunting=0&g2_edge_grinding=0&g2_edge_polishing=0&g2_edge_grinding_and_polishing=0&g2_blunting_of_corners=0&g2_test_hst=0&g2_tvg=0&g3_blunting=0&g3_edge_grinding=0&g3_edge_grinding_and_polishing=0&g3_edge_polishing=0&g3_blunting_of_corners=0&g3_test_hst=0&g3_tvg=0&g4_blunting=0&g4_edge_grinding=0&g4_edge_polishing=0&g4_edge_grinding_and_polishing=0&g4_blunting_of_corners=0&g4_test_hst=0&g4_tvg=0&silikon_depth=&silikon_width=&silikon_height=&dc_zespolenie=41.33&dc_klejenie=61.48&tas__nortona=5&odpad_na_masach=15&robocizna_izo=&robocizna_rama=&total_profit=15&silikon_cost_per_m2=&silikon_cost_per_mb=&cost_1_name=&cost_1_value=&cost_2_name=&cost_2_value=&cost_3_name=&cost_3_value=&cost_4_name=&cost_4_value=&cost_5_name=&cost_5_value=&cost_6_name=&cost_6_value=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7Ca8d03edb8933caabde147ae0f4002087_r", "")
+
+
+error file=/home/effector2/ftp/epesi/include/database.php
+error line=170
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "Argument 17 is not number(%f): <ul><li>INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)</li><li>Array
+(
+    [0] => 2021-07-19 16:54:43
+    [1] => 6
+    [2] => 1
+    [3] => 16287
+    [4] => 33.1 [6,38mm] / SWISSPACER Advance, kolor: czarny - 18 Ar / termo 1,0 4mm ESG AE
+    [5] => 3139
+    [6] => []
+    [7] => 30
+    [8] => m2
+    [9] => 4368.82
+    [10] => 162
+    [11] => m2
+    [12] => 4368.82
+    [13] => 162
+    [14] => 0
+    [15] => 0
+    [16] => 0
+    [17] => 1 043.98
+    [18] => 112716.939
+    [19] => 0
+    [20] => 0
+    [21] => 158.96
+    [22] => 707748.84
+    [23] => 3.96
+    [24] => 406
+    [25] => 37
+    [26] => 0.2
+    [27] => 37
+    [28] => 60
+    [29] => 18
+    [30] => 10
+    [31] => 29
+    [32] => 43
+    [33] => 0.2
+    [34] => 27
+    [35] => 16
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 1
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 0
+    [45] => 0
+    [46] => 0
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 0
+    [52] => 0
+    [53] => 0
+    [54] => 0
+    [55] => 0
+    [56] => 0
+    [57] => 0
+    [58] => 0
+    [59] => 0
+    [60] => 0
+    [61] => 0
+    [62] => 0
+    [63] => 0
+    [64] => 0
+    [65] => 0
+    [66] => 0
+    [67] => 0
+    [68] => 0
+    [69] => 0
+    [70] => 0
+    [71] => 0
+    [72] => 0
+    [73] => 0
+    [74] => 0
+    [75] => 0
+    [76] => 0
+    [77] => 1
+    [78] => 41.33
+    [79] => 61.48
+    [80] => 5
+    [81] => 15
+    [82] => 15
+    [83] => VL331
+    [84] => LG04T1
+)
+</li></ul>", "/home/effector2/ftp/epesi/include/database.php", 170, Array ("INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)", Array (#85), Array (#171), "INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,", 17, 85, "%f"))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 170
+    function called: trigger_error("Argument 17 is not number(%f): <ul><li>INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)</li><li>Array
+(
+    [0] => 2021-07-19 16:54:43
+    [1] => 6
+    [2] => 1
+    [3] => 16287
+    [4] => 33.1 [6,38mm] / SWISSPACER Advance, kolor: czarny - 18 Ar / termo 1,0 4mm ESG AE
+    [5] => 3139
+    [6] => []
+    [7] => 30
+    [8] => m2
+    [9] => 4368.82
+    [10] => 162
+    [11] => m2
+    [12] => 4368.82
+    [13] => 162
+    [14] => 0
+    [15] => 0
+    [16] => 0
+    [17] => 1 043.98
+    [18] => 112716.939
+    [19] => 0
+    [20] => 0
+    [21] => 158.96
+    [22] => 707748.84
+    [23] => 3.96
+    [24] => 406
+    [25] => 37
+    [26] => 0.2
+    [27] => 37
+    [28] => 60
+    [29] => 18
+    [30] => 10
+    [31] => 29
+    [32] => 43
+    [33] => 0.2
+    [34] => 27
+    [35] => 16
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 1
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 0
+    [45] => 0
+    [46] => 0
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 0
+    [52] => 0
+    [53] => 0
+    [54] => 0
+    [55] => 0
+    [56] => 0
+    [57] => 0
+    [58] => 0
+    [59] => 0
+    [60] => 0
+    [61] => 0
+    [62] => 0
+    [63] => 0
+    [64] => 0
+    [65] => 0
+    [66] => 0
+    [67] => 0
+    [68] => 0
+    [69] => 0
+    [70] => 0
+    [71] => 0
+    [72] => 0
+    [73] => 0
+    [74] => 0
+    [75] => 0
+    [76] => 0
+    [77] => 1
+    [78] => 41.33
+    [79] => 61.48
+    [80] => 5
+    [81] => 15
+    [82] => 15
+    [83] => VL331
+    [84] => LG04T1
+)
+</li></ul>", 256)
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 377
+    function called: TypeControl("INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)", "Array (#85)")
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1376
+    function called: Execute("INSERT INTO eff_constructions_data_1 (created_on,created_by,active,f_construction_id,f_title_old,f_contract_name,f_surcharge,f_profit,f_jm,f_qty,f_unit_price,f_jm_old,f_qty_old,f_unit_price_old,f_opcja,f_qty_option,f_freeze_price,f_m2,f_weight,f_model_proc,f_gabaryt_proc,f_m2_price,f_total_price,f_transport_m2,f_glass_1,f_glass_1_price,f_glass_1_waste,f_glass_1_c_zak,f_frame_1,f_frame_thickness_1,f_frame_1_price,f_glass_2,f_glass_2_price,f_glass_2_waste,f_glass_2_c_zak,f_glass_2_esg,f_frame_2_price,f_glass_3_waste,f_frame_3_price,f_glass_4_waste,f_gas,f_gas_price,f_glazing_bars_price,f_g1_blunting,f_g1_edge_grinding,f_g1_edge_grinding_and_polishing,f_g1_edge_polishing,f_g1_blunting_of_corners,f_g1_holes_to_20mm,f_g1_holes_from_20mm,f_g1_cutouts_at_the_edges,f_g1_cutouts_in_the_corners,f_g1_other_cutouts,f_g1_test_hst,f_g1_tvg,f_g2_blunting,f_g2_edge_grinding,f_g2_edge_polishing,f_g2_edge_grinding_and_polishing,f_g2_blunting_of_corners,f_g2_test_hst,f_g2_tvg,f_g3_blunting,f_g3_edge_grinding,f_g3_edge_grinding_and_polishing,f_g3_edge_polishing,f_g3_blunting_of_corners,f_g3_test_hst,f_g3_tvg,f_g4_blunting,f_g4_edge_grinding,f_g4_edge_polishing,f_g4_edge_grinding_and_polishing,f_g4_blunting_of_corners,f_g4_test_hst,f_g4_tvg,f_nodimensions,f_calculated,f_dc_zespolenie,f_dc_klejenie,f_tas__nortona,f_odpad_na_masach,f_total_profit,f_katalog_szyba_1,f_katalog_szyba_2) VALUES (%T,%d,%d,%s,%s,%s,%s,%f,%s,%f,%f,%s,%s,%s,%d,%d,%d,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%f,%s,%s,%s,%s,%s,%f,%s,%f,%s,%s,%f,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%f,%f,%f,%f,%f,%s,%s)", Array (#85))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 1089
+    function called: new_record("eff_constructions", Array (#168))
+
+[PHP core called function]
+    function called: view_entry("add", null, Array (#166))
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "view_entry"), Array ("add", null, Array (#166)))
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#166)), "view_entry")
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#166)), "view_entry")
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_7cdd3edda81da3aa0d3eafda9828b36e=&submited=1&title_old=33.1%20%5B6%2C38mm%5D%20%2F%20SWISSPACER%20Advance%2C%20kolor%3A%20czarny%20-%2018%20Ar%20%2F%20termo%201%2C0%204mm%20ESG%20AE&surcharge=%5B%5D&jm_old=m2&qty_old=4368.82&unit_price_old=162&model_proc=0&gabaryt_proc=0&glass_1_price=37&glass_1_waste=0.2&glass_1_c_zak=37&glass_1_esg=&glass_1_lam=&glass_1_obrob=&glass_2_price=43&glass_2_waste=0.2&glass_2_c_zak=27&glass_2_esg=16&glass_2_lam=&glass_2_obrob=&glass_3_price=&glass_3_waste=0&glass_3_c_zak=&glass_3_esg=&glass_3_lam=&glass_3_obrob=&glass_4_price=&glass_4_waste=0&glass_4_c_zak=&glass_4_esg=&glass_4_lam=&glass_4_obrob=&fields_1=&fields_2=&fields_3=&glazing_bars_price=0&blunting=&edge_grinding=&edge_polishing=&blunting_of_corners=&holes_to_20mm=&holes_from_20mm=&cutouts_at_the_edges=&cutouts_in_the_corners=&other_cutouts=&test_hst=&tvg=&nodimensions=0&calculated=1&summary=&transport_m2=3.96&parameters=&katalog_szyba_1=VL331&katalog_ramka_1=&katalog_szyba_2=LG04T1&katalog_ramka_2=&katalog_szyba_3=&katalog_ramka_3=&katalog_szyba_4=&lp=&title=&contract_name=3139&contract_name__search=&waste=&profit=30&jm=m2&qty=4368.82&unit_price=162&opcja=0&qty_option=0&freeze_price=0&m2=1%20043%2C98&mb=&model=&positions=&description=&calculations=&glass_1=406&glass_1__search=&glass_1_special_price=&glass_1_waste_manual=&frame_1=60&frame_1__search=&frame_thickness_1=18&frame_1_price=10&glass_2=29&glass_2__search=&glass_2_special_price=&glass_2_waste_manual=&frame_2=&frame_2__search=&frame_thickness_2=&frame_2_price=0&glass_3=&glass_3__search=&glass_3_special_price=&glass_3_waste_manual=&frame_3=&frame_3__search=&frame_thickness_3=&frame_3_price=0&glass_4=&glass_4__search=&glass_4_special_price=&glass_4_waste_manual=&gas=1&gas_price=0&rack=&glazing_bar_1=&glazing_bar_2=&glazing_bar_3=&g1_blunting=0&g1_edge_grinding=0&g1_edge_grinding_and_polishing=0&g1_edge_polishing=0&g1_blunting_of_corners=0&g1_holes_to_20mm=0&g1_holes_from_20mm=0&g1_cutouts_at_the_edges=0&g1_cutouts_in_the_corners=0&g1_other_cutouts=0&g1_test_hst=0&g1_tvg=0&g2_blunting=0&g2_edge_grinding=0&g2_edge_polishing=0&g2_edge_grinding_and_polishing=0&g2_blunting_of_corners=0&g2_test_hst=0&g2_tvg=0&g3_blunting=0&g3_edge_grinding=0&g3_edge_grinding_and_polishing=0&g3_edge_polishing=0&g3_blunting_of_corners=0&g3_test_hst=0&g3_tvg=0&g4_blunting=0&g4_edge_grinding=0&g4_edge_polishing=0&g4_edge_grinding_and_polishing=0&g4_blunting_of_corners=0&g4_test_hst=0&g4_tvg=0&silikon_depth=&silikon_width=&silikon_height=&dc_zespolenie=41.33&dc_klejenie=61.48&tas__nortona=5&odpad_na_masach=15&robocizna_izo=&robocizna_rama=&total_profit=15&silikon_cost_per_m2=&silikon_cost_per_mb=&cost_1_name=&cost_1_value=&cost_2_name=&cost_2_value=&cost_3_name=&cost_3_value=&cost_4_name=&cost_4_value=&cost_5_name=&cost_5_value=&cost_6_name=&cost_6_value=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7Ca8d03edb8933caabde147ae0f4002087_r", "")
+

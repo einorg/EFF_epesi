@@ -1,0 +1,18 @@
+who=20
+type=1
+message=Type: E_ERROR (1)
+Message: Call to undefined method Eff_Constr::brak_rzeczywistej_powierzchni()
+File: /home/effector2/ftp/epesi/modules/Eff/Constr.php
+Line=224
+error backtrace:
+[PHP core called function]
+    function called: check_for_fatal()
+
+
+error file=/home/effector2/ftp/epesi/modules/Eff/Constr.php
+error line=224
+
+error backtrace:
+[PHP core called function]
+    function called: check_for_fatal()
+

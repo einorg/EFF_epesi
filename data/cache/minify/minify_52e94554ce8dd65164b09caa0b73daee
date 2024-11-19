@@ -1,0 +1,204 @@
+utils_recordbrowser_set_favorite = function(state,tab,id,element) {
+	$(element).innerHTML = '...';
+	new Ajax.Request('modules/Utils/RecordBrowser/favorites.php', {
+		method: 'post',
+		parameters:{
+			tab:Object.toJSON(tab),
+			id:Object.toJSON(id),
+			state:Object.toJSON(state),
+			element:Object.toJSON(element),
+			cid: Epesi.client_id
+		},
+		onSuccess:function(t) {
+			eval(t.responseText);
+		}
+	});
+};
+
+;utils_watchdog_set_subscribe = function(state,cat,id,element) {
+	if (!JSON) return;	
+	jq('#'+element).html('...');
+	jq.ajax({
+		type: 'POST',
+		url: 'modules/Utils/Watchdog/subscribe.php', 
+		data:{
+			cat:JSON.stringify(cat),
+			id:JSON.stringify(id),
+			state:JSON.stringify(state),
+			element:JSON.stringify(element),
+			cid: Epesi.client_id
+		},
+		success:function(t) {
+			eval(t);
+		}
+	});
+};
+
+;var RecordPicker_select_all = function(select,path,message) {
+	Epesi.updateIndicatorText(message);
+	Epesi.procOn++;
+	Epesi.updateIndicator();
+	new Ajax.Request('modules/Utils/RecordBrowser/RecordPicker/select_all.php', {
+		method: 'post',
+		parameters:{
+			select: Object.toJSON(select),
+			path: Object.toJSON(path),
+			cid: Epesi.client_id
+		},
+		onSuccess:function(t) {
+			eval(t.responseText);
+		}
+	});
+}
+
+;rpicker_init = function(element, id){
+	var checkbox = $('leightbox_rpicker_'+element+'_'+id);
+	var list = document.getElementsByName(element+'to[]')[0];
+	if (!list)
+		list = $(element);
+	var k = 0;
+	checkbox.checked = false;
+	if(list) while (k!=list.length) {
+		if (list.options[k].value == id) {
+			checkbox.checked = true;
+			break;
+		}
+		k++;
+	}
+	checkbox.observe('click', function(e){
+		rpicker_move(element,id,checkbox.getAttribute('formated_name'));
+	});
+}
+
+rpicker_move = function(element, id, cstring, where){
+	var checkbox = $('leightbox_rpicker_'+element+'_'+id);
+	if (typeof(where)=="undefined")
+		where = checkbox.checked;
+	else if (checkbox)
+		checkbox.checked = where;
+	var tolist = document.getElementsByName(element+'to[]')[0];
+	var fromlist = document.getElementsByName(element+'from[]')[0];
+	if (!tolist) {
+		var list = $(element);
+		if (where) {
+			automulti_add_value(element, '__SEP__', id, cstring);
+		} else {
+			var k = 0;
+			while (k!=list.length) {
+				if (list.options[k].value == id) {
+					x = 0;
+					while (x!=list.length) list.options[x].selected = (k==x++);
+					automulti_remove_button_action(element, '__SEP__');
+					return;
+				}
+				k++;
+			}
+		}
+	} else {
+		if (where) {
+			k = 0;
+			i = false;
+			while (k!=fromlist.length) {
+				fromlist.options[k].selected = false;
+				if (fromlist.options[k].value == id) {
+					fromlist.options[k].selected = true;
+					i = true;
+					break;
+				}
+				k++;
+			}
+			if (!i) {
+				k = 0;
+				while (k!=tolist.length) {
+					if (tolist.options[k].value == id) {
+						return;
+					}
+					k++;
+				}
+				fromlist.options[k] = new Option();
+				fromlist.options[k].selected = true;
+				fromlist.options[k].text = cstring;
+				fromlist.options[k].value = id;
+			}
+			eval('add_selected_'+element+'()');
+		} else {
+			k = 0;
+			while (k!=tolist.length) {
+				if (tolist.options[k].value == id) {
+					x = 0;
+					while (x!=tolist.length) tolist.options[x].selected = (k==x++);
+					eval('remove_selected_'+element+'()');
+					return;
+				}
+				k++;
+			}
+		}
+	}
+}
+
+rpicker_chained = function(element) {
+	jq('[rel="rpicker_leightbox_'+element+'"]').click(function(){	
+		jq('#'+element+'__chained_vals')
+			.val(jq('#'+element).closest('form').serialize())
+			.closest('form').submit();
+	});
+}
+
+
+;automulti_remove_button_update = function (element) {
+	list = document.getElementsByName(element+"__display")[0];
+	i = 0;
+	while (i!=list.options.length) {
+		if (list.options[i].selected) {
+			$("automulti_button_style_"+element).setAttribute("class","button enabled");
+			break;
+		}
+		i++;
+	}
+	if (i==list.options.length) $("automulti_button_style_"+element).setAttribute("class","button disabled");
+}
+
+automulti_remove_button_action = function (element, list_sep) {
+	list = document.getElementsByName(element+"__display")[0];
+	val_holder = $(element+'__var_holder');
+	i = 0;
+	val_holder.value = "";
+	while (i!=list.options.length) {
+		if (list.options[i].selected) {
+			list.options[i] = null;
+		} else {
+			val_holder.value += list_sep;
+			val_holder.value += list.options[i].value;
+			i++;
+		}
+	}
+	automulti_remove_button_update(element);
+}
+
+automulti_on_hide = function (element, list_sep) {
+	var new_value=$("__autocomplete_id_"+element+"__search").value.split('__');
+	if (new_value && typeof(new_value[1])!="undefined") {
+		$("__autocomplete_id_"+element+"__search").value="";
+		automulti_add_value(element, list_sep, new_value[0], new_value[1]);
+	}
+}
+
+automulti_add_value = function (element, list_sep, value, label) {
+	list = document.getElementsByName(element+"__display")[0];
+	i = 0;
+	while (i!=list.options.length) {
+		if (list.options[i].value==value) {
+			value=null;
+			break;
+		}
+		i++;
+	}
+	if (value!=null) {
+		list.options[i] = new Option();
+		list.options[i].value = value;
+		list.options[i].text = label;
+		if(typeof iphone != "undefined") list.options[i].selected = true;
+		val_holder = $(element+'__var_holder');
+		val_holder.value = val_holder.value + list_sep + value;
+	}
+}

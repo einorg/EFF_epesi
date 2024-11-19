@@ -1,0 +1,1 @@
+<?php define("CRON_TOKEN", "6869e047673cd2c056bc392b05e9452f");

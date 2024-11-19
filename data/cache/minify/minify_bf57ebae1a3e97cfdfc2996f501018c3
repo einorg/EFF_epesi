@@ -1,0 +1,160 @@
+.szkon_label {
+    margin-left: 2px;
+    background: #3f6a8c; /* Old browsers */
+    float: left;
+    color: #FFFFFF;
+    height: 19px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+
+    -webkit-box-shadow: inset 1px 1px 1px #333355;
+    -moz-box-shadow: inset 1px 1px 1px #333355;
+    box-shadow: inset 1px 1px 1px #333355;
+
+    background: #3f6a8c; /* Old browsers */
+    background: -moz-linear-gradient(top,  #3f6a8c 0%, #5087b2 50%, #3f6a8c 51%, #335772 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f6a8c), color-stop(50%,#5087b2), color-stop(51%,#3f6a8c), color-stop(100%,#335772)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #3f6a8c 0%,#5087b2 50%,#3f6a8c 51%,#335772 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #3f6a8c 0%,#5087b2 50%,#3f6a8c 51%,#335772 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #3f6a8c 0%,#5087b2 50%,#3f6a8c 51%,#335772 100%); /* IE10+ */
+    background: linear-gradient(top,  #3f6a8c 0%,#5087b2 50%,#3f6a8c 51%,#335772 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f6a8c', endColorstr='#335772',GradientType=0 ); /* IE6-9 */
+        
+}
+
+.szkon_data {
+    float: left;
+    text-align: left;
+    background:transparent;
+    width: 402px;
+    height: 19px;
+    padding: 0;
+    border-spacing: 0;
+}
+.szkon_number {
+    float: left;
+    text-align: left;
+    background:transparent;
+    width: 100px;
+    height: 19px;
+    padding: 0;
+    border-spacing: 0;
+}
+
+.szkon_number input{
+    float: left;
+    text-align: left;
+    background:white;
+    width: 95px;
+    height: 17px;
+    padding: 0px;
+    padding-left: 5px; 
+    border-spacing: 0;
+}
+.szkon_tekst {
+    float: left;
+    text-align: left;
+    background:transparent;
+    width: 200px;
+    height: 19px;
+    padding: 0;
+    border-spacing: 0;
+}
+
+.szkon_tekst input{
+    float: left;
+    text-align: left;
+    background:white;
+    width: 195px;
+    height: 17px;
+    padding: 0px;
+    padding-left: 5px; 
+    border-spacing: 0;
+}
+
+.szkon_glass select, .szkon_glass textarea {
+  background-color: #FFFFCC;
+}
+.szkon_frame select, .szkon_frame textarea {
+  background-color: #FDE9D9;
+}
+.szkon_glass {
+  background-color: #FFFFCC;  
+  float:left;
+}
+.szkon_frame  {
+  background-color: #FDE9D9;
+  float:left;
+}
+
+.szkon_data select, .szkon_data textarea, .szkon_data input{
+  width: 100%;
+  height: 100%;
+}
+.szkon_data input{
+  padding: 0px;
+  padding-left: 5px;
+  width: 395px;
+  height: 18px;
+}
+.szkon_titledata {
+  clear: both;
+  min-height: 19px;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.szkon_button_container {
+    clear: left;
+}
+
+.recount_button {
+  margin-left: 300px;   
+}
+
+#szkon_form_info{
+    width: 50%;
+    min-width: 300px;
+    min-height: 100px;
+    background: white;
+}
+
+.szkon_alert {
+    display: none;
+    padding: 20px;
+    background-color: #ff9800;/* orange warning */
+    background-color: #2196F3;/* blue info */
+    background-color: #4CAF50;/* green success */
+    background-color: #f44336;/* red */
+    color: white;
+    font-size: larger;
+}
+.szkon_info {
+    display: none;
+    padding: 20px;
+    color: white;
+}
+
+.szkon_closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.szkon_closebtn:hover {
+    color: black;
+}

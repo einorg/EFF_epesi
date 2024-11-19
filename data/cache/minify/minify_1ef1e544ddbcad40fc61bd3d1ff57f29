@@ -1,0 +1,5 @@
+szkon_refresh = function()
+{
+	console.log('Przeliczenie pozycji');
+};
+setInterval('szkon_refresh()',10000);

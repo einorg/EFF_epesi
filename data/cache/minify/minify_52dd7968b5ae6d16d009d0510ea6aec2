@@ -1,0 +1,57 @@
+console.log('form_glass_config loaded');
+
+if(typeof lang_save_changes === 'undefined'){var lang_save_changes='Zapisać zmiany?';};
+if(typeof lang_choose_glass1 === 'undefined'){var lang_choose_glass1='Wybierz szybę.';};
+if(typeof lang_choose_glass2 === 'undefined'){var lang_choose_glass2='Wybierz drugą szybę.';};
+
+jq('#szkon_button').click(function() {
+	var submit = true;
+	if (!form_glass_valid()){
+		submit = false;
+	}
+
+	if ( !confirm(lang_save_changes)) {
+		submit = false;
+	}
+
+	return submit;		    			
+	});
+form_glass_valid = function()
+{
+    console.log('form_glass_valid');
+    var res = true;
+    if ( jq('#form_glass1').val() == '0' ) 
+    {
+        alert(lang_choose_glass1);
+        res = false;
+        return res;
+    };
+    if ( jq('#form_frame1').val() != '0' && jq('#form_glass2').val() == '0' ) 
+    { ''
+        alert(lang_choose_glass2);
+        res = false;
+    }; 
+    return res;
+};
+szkon_refresh = function()
+{
+    console.log('Przeliczenie pozycji');
+    jq('#szkon_form_info').draggable();
+    var calc_log = '';
+    calc_log = calc_log + '';
+    calc_log = calc_log + '</br>Rozpoczeto kalkulację';
+    
+    if(typeof form_dict_glass === 'undefined') {calc_log = calc_log + '</br>Brak słownika szyb';};
+    if(typeof form_dict_frame === 'undefined') {calc_log = calc_log + '</br>Brak słownika ramek';};
+    if(typeof form_dict_delivery === 'undefined') {calc_log = calc_log + '</br>Brak słownika dostaw';};
+    if(typeof form_dict_gas === 'undefined') {calc_log = calc_log + '</br>Brak słownika gazu';};
+    jq('#szkon_form_info').html(calc_log);
+    
+    var s1 = jq('#form_glass1').val();
+    
+    jq('#szkon_form_info').html(calc_log);
+};
+
+jq('#recount_button').click(function() {
+  szkon_refresh();  
+});

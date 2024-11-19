@@ -1,0 +1,203 @@
+who=20
+type=256
+message=Type: E_USER_ERROR (256)
+Message: mysqli error: [1054: Unknown column 'V' in 'where clause'] in EXECUTE("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+Line=79
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1054: Unknown column 'V' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))\")
+", "/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php", 79, Array ("mysqli", "EXECUTE", 1054, "Unknown column 'V' in 'where clause'", "SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", false, Object (ADODB_mysqli), "SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", false, "mysqli error: [1054: Unknown column 'V' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))\")
+"))
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1054: Unknown column 'V' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))\")
+", 256)
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1235
+    function called: ADODB_Error_Handler("mysqli", "EXECUTE", 1054, "Unknown column 'V' in 'where clause'", "SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", false, "Object (ADODB_mysqli)")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1175
+    function called: _Execute("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))")
+
+File: /home/effector2/ftp/epesi/libs/adodb/drivers/adodb-mysqli.inc.php
+    line 163
+    function called: Execute("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array ("%vrogum%", "%vrogum%", "%vrogum%", "%vrogum%"))
+
+[PHP core called function]
+    function called: GetOne("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array ("%vrogum%", "%vrogum%", "%vrogum%", "%vrogum%"))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 213
+    function called: call_user_func_array(Array (Object (ADODB_mysqli), "GetOne"), Array ("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array (#4)))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 525
+    function called: call_with_retry("GetOne", Array ("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array (#4)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1599
+    function called: GetOne("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE %s AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE %s AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE %s AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE %s AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array ("%vrogum%", "%vrogum%", "%vrogum%", "%vrogum%"))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 626
+    function called: get_records_count("company", Object (Utils_RecordBrowser_Crits), false, Array ())
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 332
+    function called: show_data(Object (Utils_RecordBrowser_Crits), Array (), Array ("ASC"))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), null, null)
+
+File: /home/effector2/ftp/epesi/modules/CRM/Contacts/Contacts_0.php
+    line 74
+    function called: display_module(Object (Utils_RecordBrowser))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (CRM_Contacts), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (CRM_Contacts), null, null)
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 142
+    function called: display_module(Object (CRM_Contacts))
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 314
+    function called: process("__action_module__=%2FBase_Box%7C0%2FCRM_Contacts%7Cmain_0%2FUtils_RecordBrowser%7Ccompany&__location=1630592337.3804", false, true)
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 314
+    function called: process("__action_module__=%2FBase_Box%7C0%2FCRM_Contacts%7Cmain_0%2FUtils_RecordBrowser%7Ccompany&__location=1630592337.3204", false, true)
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_a121e0eb1d28f0fb154a3c59f6ac59f0=&submited=1&browse_mode=recent&__action_module__=%2FBase_Box%7C0%2FCRM_Contacts%7Cmain_0%2FUtils_RecordBrowser%7Ccompany", "")
+
+
+error file=/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+error line=79
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1054: Unknown column 'V' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))\")
+", "/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php", 79, Array ("mysqli", "EXECUTE", 1054, "Unknown column 'V' in 'where clause'", "SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", false, Object (ADODB_mysqli), "SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", false, "mysqli error: [1054: Unknown column 'V' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))\")
+"))
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1054: Unknown column 'V' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))\")
+", 256)
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1235
+    function called: ADODB_Error_Handler("mysqli", "EXECUTE", 1054, "Unknown column 'V' in 'where clause'", "SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", false, "Object (ADODB_mysqli)")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1175
+    function called: _Execute("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE '%vrogum%' AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE '%vrogum%' AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE '%vrogum%' AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE '%vrogum%' AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))")
+
+File: /home/effector2/ftp/epesi/libs/adodb/drivers/adodb-mysqli.inc.php
+    line 163
+    function called: Execute("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array ("%vrogum%", "%vrogum%", "%vrogum%", "%vrogum%"))
+
+[PHP core called function]
+    function called: GetOne("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array ("%vrogum%", "%vrogum%", "%vrogum%", "%vrogum%"))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 213
+    function called: call_user_func_array(Array (Object (ADODB_mysqli), "GetOne"), Array ("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array (#4)))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 525
+    function called: call_with_retry("GetOne", Array ("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE ? AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE ? AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE ? AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE ? AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array (#4)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1599
+    function called: GetOne("SELECT COUNT(*) FROM company_data_1 AS r WHERE r.active=1 AND ((((r.f_company_name LIKE %s AND r.f_company_name IS NOT NULL)) OR ((r.f_short_name LIKE %s AND r.f_short_name IS NOT NULL)) OR ((r.f_address_1 LIKE %s AND r.f_address_1 IS NOT NULL)) OR ((r.f_city LIKE %s AND r.f_city IS NOT NULL)) OR ((false)) OR ((false)) OR ((false))) AND ((r.f_company_name LIKE V)))", Array ("%vrogum%", "%vrogum%", "%vrogum%", "%vrogum%"))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 626
+    function called: get_records_count("company", Object (Utils_RecordBrowser_Crits), false, Array ())
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 332
+    function called: show_data(Object (Utils_RecordBrowser_Crits), Array (), Array ("ASC"))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), null, null)
+
+File: /home/effector2/ftp/epesi/modules/CRM/Contacts/Contacts_0.php
+    line 74
+    function called: display_module(Object (Utils_RecordBrowser))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (CRM_Contacts), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (CRM_Contacts), null, null)
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 142
+    function called: display_module(Object (CRM_Contacts))
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 314
+    function called: process("__action_module__=%2FBase_Box%7C0%2FCRM_Contacts%7Cmain_0%2FUtils_RecordBrowser%7Ccompany&__location=1630592337.3804", false, true)
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 314
+    function called: process("__action_module__=%2FBase_Box%7C0%2FCRM_Contacts%7Cmain_0%2FUtils_RecordBrowser%7Ccompany&__location=1630592337.3204", false, true)
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_a121e0eb1d28f0fb154a3c59f6ac59f0=&submited=1&browse_mode=recent&__action_module__=%2FBase_Box%7C0%2FCRM_Contacts%7Cmain_0%2FUtils_RecordBrowser%7Ccompany", "")
+

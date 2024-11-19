@@ -1,0 +1,161 @@
+who=45
+type=256
+message=Type: E_USER_ERROR (256)
+Message: mysqli error: [1062: Duplicate entry '710110' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (710110), )
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+Line=79
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1062: Duplicate entry '710110' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (710110), )
+", "C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php", 79, Array ("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '710110' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (710110)", false, Object (ADODB_mysqli), "mysqli error: [1062: Duplicate entry '710110' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (710110), )
+"))
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1062: Duplicate entry '710110' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (710110), )
+", 256)
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 299
+    function called: ADODB_Error_Handler("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '710110' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (710110)", false, "Object (ADODB_mysqli)")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1235
+    function called: ADODB_TransMonitor("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '710110' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (710110)", false, "\"Object (ADODB_mysqli)\"")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1175
+    function called: _Execute("INSERT INTO utils_watchdog_notification_queue VALUES (710110)")
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 213
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (710110)", Array (Array (#1)))
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 378
+    function called: call_with_retry("Execute", Array ("INSERT INTO utils_watchdog_notification_queue VALUES (?)", Array (#1)))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 182
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (%d)", Array (710110))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 146
+    function called: queue_notification_for_cron(710110)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1502
+    function called: new_event("eff_constructions", 62746, "E_457374")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowser_0.php
+    line 1501
+    function called: update_record("eff_constructions", 62746, Array (#174))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowser_0.php
+    line 1097
+    function called: update_record(62746, Array (#172))
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 924
+    function called: view_entry("edit", 62746)
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("edit", 62746), "view_entry")
+
+File: C:\xampp\htdocs\epesi\modules\Base\Box\Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("edit", 62746), "view_entry")
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 246
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: C:\xampp\htdocs\epesi\process.php
+    line 38
+    function called: process("_qf__libs_qf_50899df120d56cf44f91f436ebd45ba0=&submited=1&title_old=float%204mm%20%2F%20SWISSPACER%20Advance%2C%20kolor%3A%20czarny%20-%2016%20Ar%20%2F%20termo%201%2C1%204mm&surcharge=%22%5B%5D%22&jm_old=m2&qty_old=1&unit_price_old=&model_proc=0&gabaryt_proc=0&glass_1_price=23.5&glass_1_waste=0.07&glass_1_c_zak=23.5&glass_1_esg=&glass_1_lam=&glass_1_obrob=&glass_2_price=30&glass_2_waste=0.07&glass_2_c_zak=30&glass_2_esg=&glass_2_lam=&glass_2_obrob=&glass_3_price=&glass_3_waste=0&glass_3_c_zak=&glass_3_esg=&glass_3_lam=&glass_3_obrob=&glass_4_price=&glass_4_waste=0&glass_4_c_zak=&glass_4_esg=&glass_4_lam=&glass_4_obrob=&fields_1=&fields_2=&fields_3=&glazing_bars_price=0&blunting=&edge_grinding=&edge_polishing=&blunting_of_corners=&holes_to_20mm=&holes_from_20mm=&cutouts_at_the_edges=&cutouts_in_the_corners=&other_cutouts=&test_hst=&tvg=&nodimensions=0&calculated=1&summary=&transport_m2=0&parameters=&katalog_szyba_1=FL04&katalog_ramka_1=&katalog_szyba_2=LE04&katalog_ramka_2=&katalog_szyba_3=&katalog_ramka_3=&katalog_szyba_4=&profit_old=20&lp=3&title=float%204mm%20%2F%20SWISSPACER%20Advance%2C%20kolor%3A%20czarny%20-%2016%20Ar%20%2F%20termo%201%2C1%204mm&contract_name=10007&contract_name__search=&waste=&profit=20&jm=m2&qty=1&unit_price=123.7&opcja=0&qty_option=0&freeze_price=0&m2=1&mb=4&model=&glass_template=&positions=1%201000%201000&description=&calculations=ZAOKR.G%C3%93RA((1%5Bm2%5D%20*%20(1.11%5BKSPRZ%5D%20*%20(1%5Bwsp%C3%B3%C5%82czynnik%20transportu%20od%20liczby%20szyb%5D%20*%200%5Bdostawa%20za%20m2%5D%20%2B%2030%5Bbaza%5D%20*%201.2%5Bzysk%5D%20%2B%20((23.5%5Bcena%20zakup%20szyba%201%5D)*1.2%5Bzysk%5D%20%2B%2023.5%5Bcena%20zakup%20szyba%201%5D*0.075268817204301%5Bodpad%20brutto%20S1%20-1%5D%20%2B%20(30%5Bcena%20zakup%20szyba%202%5D)*1.2%5Bzysk%5D%20%2B%2030%5Bcena%20zakup%20szyba%202%5D*0.075268817204301%5Bodpad%20brutto%20S2%20-1%5D))%20%2B(8%5BRamka%20komora%201%5D)%5Bm2_total_price%5D))%2F1%5Bm2%5D%3B0)%0A%0A%3DZAOKR.G%C3%93RA((1%20*%20(1.11%20*%20(1%20*%200%20%2B%2030%20*%201.2%20%2B%20((23.5)*1.2%20%2B%2023.5*0.075268817204301%20%2B%20(30)*1.2%20%2B%2030*0.075268817204301))%20%2B(8)))%2F1%3B0)&notice=&glass_1=1&glass_1__search=&glass_1_special_price=&glass_1_waste_manual=&frame_1=39&frame_1__search=&frame_thickness_1=16&frame_1_price=8&glass_2=41&glass_2__search=&glass_2_special_price=&glass_2_waste_manual=&frame_2=&frame_2__search=&frame_thickness_2=&frame_2_price=0&glass_3=&glass_3__search=&glass_3_special_price=&glass_3_waste_manual=&frame_3=&frame_3__search=&frame_thickness_3=&frame_3_price=0&glass_4=&glass_4__search=&glass_4_special_price=&glass_4_waste_manual=&gas=1&gas_price=0&rack=&glazing_bar_1=&glazing_bar_2=&glazing_bar_3=&g1_blunting=0&g1_edge_grinding=0&g1_edge_grinding_and_polishing=0&g1_edge_polishing=0&g1_blunting_of_corners=0&g1_holes_to_20mm=0&g1_holes_from_20mm=0&g1_cutouts_at_the_edges=0&g1_cutouts_in_the_corners=0&g1_other_cutouts=0&g1_test_hst=0&g1_tvg=0&g2_blunting=0&g2_edge_grinding=0&g2_edge_polishing=0&g2_edge_grinding_and_polishing=0&g2_blunting_of_corners=0&g2_test_hst=0&g2_tvg=0&g3_blunting=0&g3_edge_grinding=0&g3_edge_grinding_and_polishing=0&g3_edge_polishing=0&g3_blunting_of_corners=0&g3_test_hst=0&g3_tvg=0&g4_blunting=0&g4_edge_grinding=0&g4_edge_polishing=0&g4_edge_grinding_and_polishing=0&g4_blunting_of_corners=0&g4_test_hst=0&g4_tvg=0&silikon_depth=&silikon_width=&silikon_height=&dc_zespolenie=62&dc_klejenie=130&tas__nortona=8&odpad_na_masach=18&robocizna_izo=&robocizna_rama=&total_profit=15&silikon_cost_per_m2=&silikon_cost_per_mb=&cost_1_name=&cost_1_value=&cost_2_name=&cost_2_value=&cost_3_name=&cost_3_value=&cost_4_name=&cost_4_value=&cost_5_name=&cost_5_value=&cost_6_name=&cost_6_value=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7Ca31661a21cd54f13e8d1e603071528fb_r", "")
+
+
+error file=C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+error line=79
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1062: Duplicate entry '710110' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (710110), )
+", "C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php", 79, Array ("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '710110' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (710110)", false, Object (ADODB_mysqli), "mysqli error: [1062: Duplicate entry '710110' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (710110), )
+"))
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1062: Duplicate entry '710110' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (710110), )
+", 256)
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 299
+    function called: ADODB_Error_Handler("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '710110' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (710110)", false, "Object (ADODB_mysqli)")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1235
+    function called: ADODB_TransMonitor("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '710110' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (710110)", false, "\"Object (ADODB_mysqli)\"")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1175
+    function called: _Execute("INSERT INTO utils_watchdog_notification_queue VALUES (710110)")
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 213
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (710110)", Array (Array (#1)))
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 378
+    function called: call_with_retry("Execute", Array ("INSERT INTO utils_watchdog_notification_queue VALUES (?)", Array (#1)))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 182
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (%d)", Array (710110))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 146
+    function called: queue_notification_for_cron(710110)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1502
+    function called: new_event("eff_constructions", 62746, "E_457374")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowser_0.php
+    line 1501
+    function called: update_record("eff_constructions", 62746, Array (#174))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowser_0.php
+    line 1097
+    function called: update_record(62746, Array (#172))
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 924
+    function called: view_entry("edit", 62746)
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("edit", 62746), "view_entry")
+
+File: C:\xampp\htdocs\epesi\modules\Base\Box\Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("edit", 62746), "view_entry")
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 246
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: C:\xampp\htdocs\epesi\process.php
+    line 38
+    function called: process("_qf__libs_qf_50899df120d56cf44f91f436ebd45ba0=&submited=1&title_old=float%204mm%20%2F%20SWISSPACER%20Advance%2C%20kolor%3A%20czarny%20-%2016%20Ar%20%2F%20termo%201%2C1%204mm&surcharge=%22%5B%5D%22&jm_old=m2&qty_old=1&unit_price_old=&model_proc=0&gabaryt_proc=0&glass_1_price=23.5&glass_1_waste=0.07&glass_1_c_zak=23.5&glass_1_esg=&glass_1_lam=&glass_1_obrob=&glass_2_price=30&glass_2_waste=0.07&glass_2_c_zak=30&glass_2_esg=&glass_2_lam=&glass_2_obrob=&glass_3_price=&glass_3_waste=0&glass_3_c_zak=&glass_3_esg=&glass_3_lam=&glass_3_obrob=&glass_4_price=&glass_4_waste=0&glass_4_c_zak=&glass_4_esg=&glass_4_lam=&glass_4_obrob=&fields_1=&fields_2=&fields_3=&glazing_bars_price=0&blunting=&edge_grinding=&edge_polishing=&blunting_of_corners=&holes_to_20mm=&holes_from_20mm=&cutouts_at_the_edges=&cutouts_in_the_corners=&other_cutouts=&test_hst=&tvg=&nodimensions=0&calculated=1&summary=&transport_m2=0&parameters=&katalog_szyba_1=FL04&katalog_ramka_1=&katalog_szyba_2=LE04&katalog_ramka_2=&katalog_szyba_3=&katalog_ramka_3=&katalog_szyba_4=&profit_old=20&lp=3&title=float%204mm%20%2F%20SWISSPACER%20Advance%2C%20kolor%3A%20czarny%20-%2016%20Ar%20%2F%20termo%201%2C1%204mm&contract_name=10007&contract_name__search=&waste=&profit=20&jm=m2&qty=1&unit_price=123.7&opcja=0&qty_option=0&freeze_price=0&m2=1&mb=4&model=&glass_template=&positions=1%201000%201000&description=&calculations=ZAOKR.G%C3%93RA((1%5Bm2%5D%20*%20(1.11%5BKSPRZ%5D%20*%20(1%5Bwsp%C3%B3%C5%82czynnik%20transportu%20od%20liczby%20szyb%5D%20*%200%5Bdostawa%20za%20m2%5D%20%2B%2030%5Bbaza%5D%20*%201.2%5Bzysk%5D%20%2B%20((23.5%5Bcena%20zakup%20szyba%201%5D)*1.2%5Bzysk%5D%20%2B%2023.5%5Bcena%20zakup%20szyba%201%5D*0.075268817204301%5Bodpad%20brutto%20S1%20-1%5D%20%2B%20(30%5Bcena%20zakup%20szyba%202%5D)*1.2%5Bzysk%5D%20%2B%2030%5Bcena%20zakup%20szyba%202%5D*0.075268817204301%5Bodpad%20brutto%20S2%20-1%5D))%20%2B(8%5BRamka%20komora%201%5D)%5Bm2_total_price%5D))%2F1%5Bm2%5D%3B0)%0A%0A%3DZAOKR.G%C3%93RA((1%20*%20(1.11%20*%20(1%20*%200%20%2B%2030%20*%201.2%20%2B%20((23.5)*1.2%20%2B%2023.5*0.075268817204301%20%2B%20(30)*1.2%20%2B%2030*0.075268817204301))%20%2B(8)))%2F1%3B0)&notice=&glass_1=1&glass_1__search=&glass_1_special_price=&glass_1_waste_manual=&frame_1=39&frame_1__search=&frame_thickness_1=16&frame_1_price=8&glass_2=41&glass_2__search=&glass_2_special_price=&glass_2_waste_manual=&frame_2=&frame_2__search=&frame_thickness_2=&frame_2_price=0&glass_3=&glass_3__search=&glass_3_special_price=&glass_3_waste_manual=&frame_3=&frame_3__search=&frame_thickness_3=&frame_3_price=0&glass_4=&glass_4__search=&glass_4_special_price=&glass_4_waste_manual=&gas=1&gas_price=0&rack=&glazing_bar_1=&glazing_bar_2=&glazing_bar_3=&g1_blunting=0&g1_edge_grinding=0&g1_edge_grinding_and_polishing=0&g1_edge_polishing=0&g1_blunting_of_corners=0&g1_holes_to_20mm=0&g1_holes_from_20mm=0&g1_cutouts_at_the_edges=0&g1_cutouts_in_the_corners=0&g1_other_cutouts=0&g1_test_hst=0&g1_tvg=0&g2_blunting=0&g2_edge_grinding=0&g2_edge_polishing=0&g2_edge_grinding_and_polishing=0&g2_blunting_of_corners=0&g2_test_hst=0&g2_tvg=0&g3_blunting=0&g3_edge_grinding=0&g3_edge_grinding_and_polishing=0&g3_edge_polishing=0&g3_blunting_of_corners=0&g3_test_hst=0&g3_tvg=0&g4_blunting=0&g4_edge_grinding=0&g4_edge_polishing=0&g4_edge_grinding_and_polishing=0&g4_blunting_of_corners=0&g4_test_hst=0&g4_tvg=0&silikon_depth=&silikon_width=&silikon_height=&dc_zespolenie=62&dc_klejenie=130&tas__nortona=8&odpad_na_masach=18&robocizna_izo=&robocizna_rama=&total_profit=15&silikon_cost_per_m2=&silikon_cost_per_mb=&cost_1_name=&cost_1_value=&cost_2_name=&cost_2_value=&cost_3_name=&cost_3_value=&cost_4_name=&cost_4_value=&cost_5_name=&cost_5_value=&cost_6_name=&cost_6_value=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7Ca31661a21cd54f13e8d1e603071528fb_r", "")
+

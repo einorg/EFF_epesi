@@ -1,0 +1,90 @@
+who=45
+type=256
+message=Type: E_USER_ERROR (256)
+Message: Invalid CommonData::get_array() request: Eff_Orders_Status
+File: C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php
+Line=253
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "Invalid CommonData::get_array() request: Eff_Orders_Status", "C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php", 253, Array ("Eff_Orders_Status", "value", false, false, null, false))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php
+    line 253
+    function called: trigger_error("Invalid CommonData::get_array() request: Eff_Orders_Status", 256)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php
+    line 277
+    function called: get_array("Eff_Orders_Status", "value", false, false)
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Orders\Orders_0.php
+    line 23
+    function called: get_translated_array("Eff_Orders_Status")
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 924
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 844
+    function called: get_html_of_module(Object (Eff_Orders), Array (), "body")
+
+File: C:\xampp\htdocs\epesi\modules\Base\Box\Box_0.php
+    line 142
+    function called: display_module(Object (Eff_Orders))
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 246
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: C:\xampp\htdocs\epesi\process.php
+    line 38
+    function called: process("box_main_href=e05534d64d916728fef304e354b52051", "")
+
+
+error file=C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php
+error line=253
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "Invalid CommonData::get_array() request: Eff_Orders_Status", "C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php", 253, Array ("Eff_Orders_Status", "value", false, false, null, false))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php
+    line 253
+    function called: trigger_error("Invalid CommonData::get_array() request: Eff_Orders_Status", 256)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\CommonData\CommonDataCommon_0.php
+    line 277
+    function called: get_array("Eff_Orders_Status", "value", false, false)
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Orders\Orders_0.php
+    line 23
+    function called: get_translated_array("Eff_Orders_Status")
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 924
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 844
+    function called: get_html_of_module(Object (Eff_Orders), Array (), "body")
+
+File: C:\xampp\htdocs\epesi\modules\Base\Box\Box_0.php
+    line 142
+    function called: display_module(Object (Eff_Orders))
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 246
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: C:\xampp\htdocs\epesi\process.php
+    line 38
+    function called: process("box_main_href=e05534d64d916728fef304e354b52051", "")
+

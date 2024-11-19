@@ -1,0 +1,225 @@
+who=45
+type=256
+message=Type: E_USER_ERROR (256)
+Message: mysqli error: [1062: Duplicate entry '617113' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (617113), )
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+Line=79
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1062: Duplicate entry '617113' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (617113), )
+", "C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php", 79, Array ("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '617113' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (617113)", false, Object (ADODB_mysqli), "mysqli error: [1062: Duplicate entry '617113' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (617113), )
+"))
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1062: Duplicate entry '617113' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (617113), )
+", 256)
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 299
+    function called: ADODB_Error_Handler("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '617113' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (617113)", false, "Object (ADODB_mysqli)")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1235
+    function called: ADODB_TransMonitor("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '617113' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (617113)", false, "\"Object (ADODB_mysqli)\"")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1175
+    function called: _Execute("INSERT INTO utils_watchdog_notification_queue VALUES (617113)")
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 213
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (617113)", Array (Array (#1)))
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 378
+    function called: call_with_retry("Execute", Array ("INSERT INTO utils_watchdog_notification_queue VALUES (?)", Array (#1)))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 182
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (%d)", Array (617113))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 146
+    function called: queue_notification_for_cron(617113)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1502
+    function called: new_event("contact", "152", "E_11671")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\object_wrapper\Recordset.php
+    line 278
+    function called: update_record("contact", "152", Array (#40))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\object_wrapper\Record.php
+    line 127
+    function called: update_record("152", Array (#40))
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Contracts\ContractsCommon_0.php
+    line 376
+    function called: save()
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Contracts\ContractsCommon_0.php
+    line 141
+    function called: generate_contract_no(Array (#51))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1320
+    function called: submit_contract(Array (#51), "edit")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1430
+    function called: record_processing("eff_contracts", Array (#51), "edit")
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Contracts\ContractsCommon_0.php
+    line 152
+    function called: update_record("eff_contracts", 11299, Array (11299), false, null, true)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1320
+    function called: submit_contract(Array (#50), "added")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1400
+    function called: record_processing("eff_contracts", Array (#50), "added")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowser_0.php
+    line 1089
+    function called: new_record("eff_contracts", Array (#50))
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 924
+    function called: view_entry("add", null, Array (#48))
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#3)), "view_entry")
+
+File: C:\xampp\htdocs\epesi\modules\Base\Box\Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#3)), "view_entry")
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 246
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: C:\xampp\htdocs\epesi\process.php
+    line 38
+    function called: process("_qf__libs_qf_90926d2fe46d2ecfcb0809c6fa9ce13f=&submited=1&c_id2=&status_old=&summary=&parameters=&contract_no=&contract_name=&salutation=&contact_name=&object_name=&client_name=&client_city=test&delivery_city=&status=0&enquiry_date=2023-05-18&start_date=2023-05-18&send_date=&due_date=&last_order_date=&contract_manager=152&contract_manager__search=&dept=&transport=7&fixed_m2transport_price=&fixed_transport_price=&fixed_return_price=&delivery_range=&number_of_transports=&return_transports=&print_language=1&currency=1&multiplier=&print_summary=0&disable_transport_printing=0&const_round=&dop_round=&special_price=0&customer__search=&customer=&description=&notice=&cost_control=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7Cb9b3f6583a27c7c054b3035508a1d9b4_r", "")
+
+
+error file=C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+error line=79
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1062: Duplicate entry '617113' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (617113), )
+", "C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php", 79, Array ("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '617113' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (617113)", false, Object (ADODB_mysqli), "mysqli error: [1062: Duplicate entry '617113' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (617113), )
+"))
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1062: Duplicate entry '617113' for key 'PRIMARY'] in ADODB_Error_Handler(INSERT INTO utils_watchdog_notification_queue VALUES (617113), )
+", 256)
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 299
+    function called: ADODB_Error_Handler("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '617113' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (617113)", false, "Object (ADODB_mysqli)")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1235
+    function called: ADODB_TransMonitor("mysqli", "ADODB_Error_Handler", 1062, "Duplicate entry '617113' for key 'PRIMARY'", "INSERT INTO utils_watchdog_notification_queue VALUES (617113)", false, "\"Object (ADODB_mysqli)\"")
+
+File: C:\xampp\htdocs\epesi\libs\adodb\adodb.inc.php
+    line 1175
+    function called: _Execute("INSERT INTO utils_watchdog_notification_queue VALUES (617113)")
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 213
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (617113)", Array (Array (#1)))
+
+File: C:\xampp\htdocs\epesi\include\database.php
+    line 378
+    function called: call_with_retry("Execute", Array ("INSERT INTO utils_watchdog_notification_queue VALUES (?)", Array (#1)))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 182
+    function called: Execute("INSERT INTO utils_watchdog_notification_queue VALUES (%d)", Array (617113))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\Watchdog\WatchdogCommon_0.php
+    line 146
+    function called: queue_notification_for_cron(617113)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1502
+    function called: new_event("contact", "152", "E_11671")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\object_wrapper\Recordset.php
+    line 278
+    function called: update_record("contact", "152", Array (#40))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\object_wrapper\Record.php
+    line 127
+    function called: update_record("152", Array (#40))
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Contracts\ContractsCommon_0.php
+    line 376
+    function called: save()
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Contracts\ContractsCommon_0.php
+    line 141
+    function called: generate_contract_no(Array (#51))
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1320
+    function called: submit_contract(Array (#51), "edit")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1430
+    function called: record_processing("eff_contracts", Array (#51), "edit")
+
+File: C:\xampp\htdocs\epesi\modules\Eff\Contracts\ContractsCommon_0.php
+    line 152
+    function called: update_record("eff_contracts", 11299, Array (11299), false, null, true)
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1320
+    function called: submit_contract(Array (#50), "added")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowserCommon_0.php
+    line 1400
+    function called: record_processing("eff_contracts", Array (#50), "added")
+
+File: C:\xampp\htdocs\epesi\modules\Utils\RecordBrowser\RecordBrowser_0.php
+    line 1089
+    function called: new_record("eff_contracts", Array (#50))
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 924
+    function called: view_entry("add", null, Array (#48))
+
+File: C:\xampp\htdocs\epesi\include\module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#3)), "view_entry")
+
+File: C:\xampp\htdocs\epesi\modules\Base\Box\Box_0.php
+    line 138
+    function called: display_module(Object (Utils_RecordBrowser), Array ("add", null, Array (#3)), "view_entry")
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 246
+    function called: body()
+
+File: C:\xampp\htdocs\epesi\include\epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: C:\xampp\htdocs\epesi\process.php
+    line 38
+    function called: process("_qf__libs_qf_90926d2fe46d2ecfcb0809c6fa9ce13f=&submited=1&c_id2=&status_old=&summary=&parameters=&contract_no=&contract_name=&salutation=&contact_name=&object_name=&client_name=&client_city=test&delivery_city=&status=0&enquiry_date=2023-05-18&start_date=2023-05-18&send_date=&due_date=&last_order_date=&contract_manager=152&contract_manager__search=&dept=&transport=7&fixed_m2transport_price=&fixed_transport_price=&fixed_return_price=&delivery_range=&number_of_transports=&return_transports=&print_language=1&currency=1&multiplier=&print_summary=0&disable_transport_printing=0&const_round=&dop_round=&special_price=0&customer__search=&customer=&description=&notice=&cost_control=&__action_module__=%2FBase_Box%7C0%2FUtils_RecordBrowser%7Cb9b3f6583a27c7c054b3035508a1d9b4_r", "")
+

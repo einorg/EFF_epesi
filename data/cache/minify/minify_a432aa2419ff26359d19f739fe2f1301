@@ -1,0 +1,510 @@
+tabbed_browser_switch = function(id,max,elem,path){
+	var x = $(path+"_d"+id);
+	var parent_menu;
+	if(x) {
+		for(var i=0; i<max; i++){
+			var y = $(path+"_d"+i);
+			if(y) y.style.display="none";
+			$(path+"_c"+i).className="tabbed_browser_unselected";
+			parent_menu = $(path+"_c"+i).getAttribute("parent_menu")
+			if (parent_menu)
+				$("tabbed_browser_submenu_"+parent_menu).className="tabbed_browser_unselected";
+		}
+		x.style.display="block";
+		$(path+"_c"+id).className="tabbed_browser_selected";
+		parent_menu = $(path+"_c"+id).getAttribute("parent_menu")
+		if (parent_menu)
+			$("tabbed_browser_submenu_"+parent_menu).className="tabbed_browser_selected";
+	} else eval(elem.getAttribute("original_action"));
+};
+
+tabbed_browser_hide = function(path,id){
+	var x = $(path+"_d"+id);
+	var y = $(path+"_c"+id);
+	if(x && y) {
+		x.hide();
+		y.hide();
+	}
+};
+
+tabbed_browser_show = function(path,id){
+	var x = $(path+"_d"+id);
+	var y = $(path+"_c"+id);
+	if(x && y) {
+		x.show();
+		y.show();
+	}
+};
+;// global storage object for type-ahead info, including reset() method
+var typeAheadInfo = {last:0, 
+                     accumString:"", 
+                     delay:2000,
+                     timeout:null, 
+                     reset:function() {this.last=0; this.accumString=""}
+                    };
+
+// function invoked by select element's onkeydown event handler
+function typeAhead() {
+   // limit processing to IE event model supporter; don't trap Ctrl+keys
+   if (window.event && !window.event.ctrlKey) {
+      // timer for current event
+      var now = new Date();
+      // process for an empty accumString or an event within [delay] ms of last
+      if (typeAheadInfo.accumString == "" || now - typeAheadInfo.last < typeAheadInfo.delay) {
+         // make shortcut event object reference
+         var evt = window.event;
+         // get reference to the select element
+         var selectElem = evt.srcElement;
+         // get typed character ASCII value
+         var charCode = evt.keyCode;
+		 // detect tab keys
+		 if (charCode==9) {
+			// clear the accumulated string
+			typeAheadInfo.accumString = '';
+			// exit
+			return;
+		 }
+         // get the actual character, converted to uppercase
+         var newChar =  String.fromCharCode(charCode).toUpperCase();
+         // append new character to accumString storage
+         typeAheadInfo.accumString += newChar;
+         // grab all select element option objects as an array
+         var selectOptions = selectElem.options;
+         // prepare local variables for use inside loop
+         var txt, nearest;
+         // look through all options for a match starting with accumString
+         for (var i = 0; i < selectOptions.length; i++) {
+            // convert each item's text to uppercase to facilitate comparison
+            // (use value property if you want match to be for hidden option value)
+            txt = selectOptions[i].text.toUpperCase();
+            // record nearest lowest index, if applicable
+            nearest = (typeAheadInfo.accumString > 
+                       txt.substr(0, typeAheadInfo.accumString.length)) ? i : nearest;
+            // process if accumString is at start of option text
+            if (txt.indexOf(typeAheadInfo.accumString) == 0) {
+               // stop any previous timeout timer
+               clearTimeout(typeAheadInfo.timeout);
+               // store current event's time in object 
+               typeAheadInfo.last = now;
+               // reset typeAhead properties in [delay] ms unless cleared beforehand
+               typeAheadInfo.timeout = setTimeout("typeAheadInfo.reset()", typeAheadInfo.delay);
+               // visibly select the matching item
+               selectElem.selectedIndex = i;
+               // prevent default event actions and propagation
+               evt.cancelBubble = true;
+               evt.returnValue = false;
+               // exit function
+               return false;   
+            }            
+         }
+         // if a next lowest match exists, select it
+         if (nearest != null) {
+            selectElem.selectedIndex = nearest;
+         }
+      } else {
+         // not a desired event, so clear timeout
+         clearTimeout(typeAheadInfo.timeout);
+      }
+      // reset global object
+      typeAheadInfo.reset();
+   }
+   return true;
+}
+;console.log('form_glass_config loaded');
+
+if(typeof lang_save_changes === 'undefined'){var lang_save_changes='Zapisać zmiany?';};
+if(typeof lang_choose_glass1 === 'undefined'){var lang_choose_glass1='Wybierz szybę.';};
+if(typeof lang_choose_glass2 === 'undefined'){var lang_choose_glass2='Wybierz drugą szybę.';};
+
+jq('#szkon_button').click(function() 
+{
+  var submit = true;
+  if (!szkon_refresh()){
+      return false;
+  }
+  var form_price_val = jq('#form_price').val();
+  if(form_price_val <= 0)
+  {
+    szkon_form_show_error('Niepoprawna cena. Brak możliwości zapisu.');   
+    return false;
+  }
+
+  if ( !confirm(lang_save_changes)) {
+          submit = false;
+  }
+
+  return submit;		    			
+});
+
+
+szkon_form_show_error = function(msg)
+{
+  jq('.szkon_alert_msg').html(msg);
+  jq('.szkon_alert').css('background-color', '#f44336'); /* red */
+  jq('.szkon_alert').show(600);
+  setTimeout(function(){jq('.szkon_alert').hide(600);}, 5000);
+};
+
+szkon_form_show_success = function(msg)
+{
+  jq('.szkon_alert_msg').html(msg);
+  jq('.szkon_alert').css('background-color', '#4CAF50'); /* green */
+  jq('.szkon_alert').show(600);
+  setTimeout(function(){jq('.szkon_alert').hide(600);}, 5000);
+};
+
+szkon_form_show_info = function(msg)
+{
+  jq('.szkon_alert_msg').html(msg);
+  jq('.szkon_alert').css('background-color', '#2196F3'); /* blue */
+  jq('.szkon_alert').show(600);
+  setTimeout(function(){jq('.szkon_alert').hide(600);}, 5000);
+};
+
+szkon_form_show_warning = function(msg)
+{
+  jq('.szkon_alert_msg').html(msg);
+  jq('.szkon_alert').css('background-color', '#ff9800'); /* orange */
+  jq('.szkon_alert').show(600);
+  setTimeout(function(){jq('.szkon_alert').hide(600);}, 5000);
+};
+
+szkon_refresh = function()
+{
+  var ret=true;
+  var err_msg='';
+
+  jq('.szkon_alert').hide();
+  console.log('Przeliczenie pozycji');
+  // jq('#szkon_form_info').draggable();
+  var calc_log = '';
+  calc_log = calc_log + '';
+  calc_log = calc_log + 'Przeliczenie pozycji';
+  jq('#szkon_form_info').html(calc_log);
+
+  if(typeof form_dict_glass === 'undefined') {calc_log = calc_log + '</br>Brak słownika szyb';};
+  if(typeof form_dict_frame === 'undefined') {calc_log = calc_log + '</br>Brak słownika ramek';};
+  if(typeof form_dict_delivery === 'undefined') {calc_log = calc_log + '</br>Brak słownika dostaw';};
+  if(typeof form_dict_gas === 'undefined') {calc_log = calc_log + '</br>Brak słownika gazu';};
+  jq('#szkon_form_info').html(calc_log);
+
+  jq('#form_price').val('0');
+  jq('#form_price_add').val('0');
+  jq('#form_price_m2').val('0');
+
+ // var szk = new Object();
+  
+  // var glass =  new Object();
+  
+  var form_delivery_val = Number(jq('#form_delivery').val());
+  var form_do_waste_val = Number(jq('#form_do_waste').val());
+  var form_waste_val = Number(jq('#form_waste').val());
+  var form_profit_val = Number(jq('#form_profit').val());
+
+  var form_width_val = Number(jq('#form_width').val());
+  var form_height_val = Number(jq('#form_height').val());
+  var form_pieces_val = Number(jq('#form_pieces').val());
+
+  var form_gas_val = Number(jq('#form_gas').val());
+  var form_glass1_val = Number(jq('#form_glass1').val());
+  var form_glass2_val = Number(jq('#form_glass2').val());
+  var form_glass3_val = Number(jq('#form_glass3').val());
+  var form_glass4_val = Number(jq('#form_glass4').val());
+  var form_frame1_val = Number(jq('#form_frame1').val());
+  var form_frame2_val = Number(jq('#form_frame2').val());
+  var form_frame3_val = Number(jq('#form_frame3').val());
+  var form_frame_thick1_val = Number(jq('#form_frame_thick1').val());
+  var form_frame_thick2_val = Number(jq('#form_frame_thick2').val());
+  var form_frame_thick3_val = Number(jq('#form_frame_thick3').val());
+  
+
+ // var form_price_val = Number(jq('#form_price').val());
+ // var form_price_add_val = Number(jq('#form_price_add').val());
+ // var form_price_m2_val = Number(jq('#form_price_m2').val());
+  var form_profit_val = Number(jq('#form_profit').val());
+
+  var form_delivery_price = 0;
+  var form_frame1_price = 0;
+  var form_frame2_price = 0;
+  var form_frame3_price = 0;
+  var form_frame1_thick_min = 0;
+  var form_frame2_thick_min = 0;
+  var form_frame3_thick_min = 0;
+  var form_frame1_thick_max = 0;
+  var form_frame2_thick_max = 0;
+  var form_frame3_thick_max = 0;
+
+  var form_gas_price = 0;
+  var form_glass1_price = 0;
+  var form_glass2_price = 0;
+  var form_glass3_price = 0;
+  var form_glass4_price = 0;
+
+  // console.dir(form_dict_glass);
+  if(form_delivery_val>0) {form_delivery_price = 1*form_dict_delivery[form_delivery_val]['price'];};
+  if(form_frame1_val>0) 
+  {
+      form_frame1_price = 1*form_dict_frame[form_frame1_val]['price'];  
+      form_frame1_thick_min = 1*form_dict_frame[form_frame1_val]['thickness_min'];  
+      form_frame1_thick_max = 1*form_dict_frame[form_frame1_val]['thickness_max'];    
+  };
+  if(form_frame2_val>0) 
+  {
+      form_frame2_price = 1*form_dict_frame[form_frame2_val]['price'];
+      form_frame2_thick_min = 1*form_dict_frame[form_frame2_val]['thickness_min'];  
+      form_frame2_thick_max = 1*form_dict_frame[form_frame2_val]['thickness_max'];  
+  };
+  if(form_frame3_val>0) 
+  {
+      form_frame3_price = 1*form_dict_frame[form_frame3_val]['price'];
+      form_frame3_thick_min = 1*form_dict_frame[form_frame3_val]['thickness_min'];  
+      form_frame3_thick_max = 1*form_dict_frame[form_frame3_val]['thickness_max']; 
+  };
+  
+   
+  if(form_gas_val>0) {form_gas_price = 1*form_dict_gas[form_gas_val]['price'];};
+  if(form_glass1_val>0) {form_glass1_price = 1*form_dict_glass[form_glass1_val]['price'];};
+  if(form_glass2_val>0) {form_glass2_price = 1*form_dict_glass[form_glass2_val]['price'];};
+  if(form_glass3_val>0) {form_glass3_price = 1*form_dict_glass[form_glass3_val]['price'];};
+  if(form_glass4_val>0) {form_glass4_price = 1*form_dict_glass[form_glass4_val]['price'];};
+
+  // validate form
+  //180 x 350 mm 
+  if(1===1) // walidacja
+  {
+    if(ret && (form_pieces_val < 1)) 
+    {
+      err_msg = "BŁĄD - Podaj liczbę sztuk."; 
+      ret = false;
+    }  
+    if(ret && (form_width_val < 180)) 
+    {
+      err_msg = "BŁĄD - Przekroczona minimalna szerokość szyby."; 
+      ret = false;
+    }
+    if(ret && (form_height_val < 350)) 
+    {
+      err_msg = "BŁĄD - Przekroczona minimalna szerokość szyby."; 
+      ret = false;
+    }
+
+    if(ret && (form_waste_val < 15)) 
+    {
+      err_msg = "BŁĄD - Minimalny odpad wynosi 15%";
+      ret = false;
+    }
+    if(ret && (form_profit_val < 15)) 
+    {
+      err_msg = "BŁĄD - Minimalny zysk na pozycjach wynosi 15%";
+      ret = false;
+    }
+
+    if(ret && (form_profit_val > 30))  
+    {
+      err_msg = "BŁĄD - Maksymalny zysk na pozycjach wynosi 30%";
+      ret = false;
+    }
+    if(ret && form_glass1_val <= 0) // szyba 1 zawsze
+    {
+      err_msg = "BŁĄD - Wybierz pierwszą szybę";
+      ret = false;
+    }
+
+    if(ret && (form_frame1_val > 0) && form_glass2_val <= 0) // jeżeli 1 ramka to musi być 2 szyba pomiedzy
+    {
+      err_msg = "BŁĄD - Wybierz drugą szybę";
+      ret = false;
+    }
+
+    if(ret && (form_frame2_val > 0) && form_glass2_val <= 0) // jeżeli 2 ramka to musi być 2 szyba
+    {
+      err_msg = "BŁĄD - Wybierz drugą szybę";
+      ret = false;
+    }
+    if(ret && (form_frame2_val > 0) && form_glass3_val <= 0) // jeżeli 2 ramka to musi być 3 szyba
+    {
+      err_msg = "BŁĄD - Wybierz trzecią szybę";
+      ret = false;
+    }
+
+    if(ret && (form_frame3_val > 0) && form_glass3_val <= 0) // jeżeli 3 ramka to musi być 3 szyba
+    {
+      err_msg = "BŁĄD - Wybierz trzecią szybę";
+      ret = false;
+    }
+    if(ret && (form_frame3_val > 0) && (form_glass4_val <= 0)) // jeżeli 3 ramka to musi być 4 szyba
+    {
+      err_msg = "BŁĄD - Wybierz czwartą szybę";
+      ret = false;
+    }
+
+    if(ret && (form_glass2_val > 0) && form_frame1_val <= 0) // jeżeli 2 szyby to musi być ramka pomiedzy
+    {
+      err_msg = "BŁĄD - Wybierz pierwszą ramkę";
+      ret = false;
+    }
+
+    if(ret && (form_glass3_val > 0) && form_frame2_val <= 0)// jeżeli 3 szyba to musi być 2 ramka pomiedzy
+    {
+      err_msg = "BŁĄD - Wybierz drugą ramkę";
+      ret = false;
+    }
+
+    if(ret && (form_glass4_val > 0) && form_frame3_val <= 0) // jeżeli 4 szyba to musi być 3 ramka pomiedzy
+    {
+      err_msg = "BŁĄD - Wybierz trzecią ramkę";
+      ret = false;
+    }
+  }
+
+  if(1===1) // walidacja grubosci ramki
+  {
+    if(ret && (form_gas_val > 0) && form_frame1_val > 0) // jeżeli 1 ramka i nie argon to musi byc grubosc
+    {
+      if(form_frame_thick1_val < 1)
+      {
+        err_msg = "BŁĄD - Podaj grubość ramiki 1";
+        ret = false;
+      }
+      else if(form_frame_thick1_val < form_frame1_thick_min || form_frame1_thick_max < form_frame_thick1_val )
+      {
+        err_msg = "BŁĄD - Grubość ramiki 1 musi być w zakresie od "+form_frame1_thick_min+" do "+form_frame1_thick_max;
+        ret = false;
+      }
+    }
+
+    if(ret && (form_gas_val > 0) && form_frame2_val > 0) // jeżeli 2 ramka i nie argon to musi byc grubosc
+    {
+      if(form_frame_thick2_val < 2)
+      {
+        err_msg = "BŁĄD - Podaj grubość ramiki 2";
+        ret = false;
+      }
+      else if(form_frame_thick2_val < form_frame2_thick_min || form_frame2_thick_max < form_frame_thick2_val )
+      {
+        err_msg = "BŁĄD - Grubość ramiki 2 musi być w zakresie od "+form_frame2_thick_min+" do "+form_frame2_thick_max;
+        ret = false;
+      }
+    }
+
+    if(ret && (form_gas_val > 0) && form_frame3_val > 0) // jeżeli 3 ramka i nie argon to musi byc grubosc
+    {
+      if(form_frame_thick3_val < 3)
+      {
+        err_msg = "BŁĄD - Podaj grubość ramiki 3";
+        ret = false;
+      }
+      else if(form_frame_thick3_val < form_frame3_thick_min || form_frame3_thick_max < form_frame_thick3_val )
+      {
+        err_msg = "BŁĄD - Grubość ramiki 3 musi być w zakresie od "+form_frame3_thick_min+" do "+form_frame3_thick_max;
+        ret = false;
+      }
+    }
+  }
+
+  if(ret === false)
+  {
+    calc_log = calc_log + err_msg;
+    jq('#szkon_form_info').html(calc_log);
+    szkon_form_show_error(err_msg); 
+    return false;
+  }
+
+  var ct_glasses = 1;
+  
+  var form_base_price = form_dict_base[ct_glasses]['price'];
+  
+  if(form_glass2_val > 0){ct_glasses=2;};
+  if(form_glass3_val > 0){ct_glasses=3;};
+  if(form_glass4_val > 0){ct_glasses=4;};
+  calc_log = calc_log + '</br>Ilość szyb: '+ct_glasses;
+
+  calc_log = calc_log + '</br></br>Wyliczenie: ';
+  
+  
+  var calc_price_m2 = 0;
+  var calc_price_add = 0;
+  var calc_price = 0;
+  var price_position = 0;
+  var surface = form_height_val/1000*form_width_val/1000;
+  surface = Math.round((surface + Number.EPSILON) * 100) / 100;
+  calc_log = calc_log + '</br>surface: '+surface;
+
+  var calc_str = '';
+  var profit = form_profit_val/100;
+  var w1 = form_waste_val/100;
+  var w2 = form_waste_val/100;
+  var w3 = form_waste_val/100;
+  var w4 = form_waste_val/100;
+  if(form_do_waste_val == 1)
+  {
+    if(form_glass1_val != 0) {w1 = form_dict_glass[form_glass1_val]['waste'];}; 
+    if(form_glass2_val != 0) {w2 = form_dict_glass[form_glass2_val]['waste'];}; 
+    if(form_glass3_val != 0) {w3 = form_dict_glass[form_glass3_val]['waste'];}; 
+    if(form_glass4_val != 0) {w4 = form_dict_glass[form_glass4_val]['waste'];}; 
+  }
+ 
+  var g1 = Math.ceil(Number(form_glass1_price) + (form_glass1_price * profit));
+  g1 = Number(g1) + (Number(g1) * Number(w1));
+
+  var g2 = Math.ceil(Number(form_glass2_price) + (form_glass2_price * profit));
+  g2 = Number(g2) + (Number(g2) * Number(w2));
+
+  var g3 = 1*Math.ceil(Number(form_glass3_price) + (form_glass3_price * profit));
+  g3 = Number(g3) + (Number(g3) * Number(w3));
+
+  var g4 = Math.ceil(Number(form_glass4_price) + (form_glass4_price * profit));
+  g4 = Number(g4) + (Number(g4) * Number(w4));
+  //'2'+'2'*'2'
+
+
+  var gas_val = form_gas_price * surface * (ct_glasses-1);
+
+  console.log('cpac');
+  /*
+  var f1 = form_frame1_price ;
+  var f2 = form_frame2_price;
+  var f3 = form_frame3_price;
+
+  calc_str = calc_str + 'form_price_m2 = form_base_price + form_delivery_price + f1 + f2 + f3 + g1 + g2 + g3 + g4';
+  calc_str = calc_str + '';
+  var n=0;
+  n = Number(form_base_price) + gas_val + form_delivery_price * ct_glasses ;
+  n = Number(n) + Number(f1) + Number(f2) + Number(f3);
+  n = Number(n) + Number(g1) + Number(g2) + Number(g3) + Number(g4);
+  calc_price_m2 = n;
+
+
+
+  calc_price_add = 0;
+  calc_price = calc_price_m2 * surface + calc_price_add;
+  
+  price_position = calc_price * form_pieces_val;
+  
+  console.dir('gone');
+ 
+  jq('#form_price_m2').val(calc_price_m2);
+  jq('#form_price_add').val(calc_price_add);
+  jq('#form_price').val(calc_price);
+  jq('#form_price_position').val(price_position);
+
+  jq('#szkon_form_info').html(calc_log);
+  console.dir('gon1e');
+  */
+  return ret;
+};
+
+jq('#recount_button').click(function() {
+  szkon_refresh();  
+});
+
+;tabbedbrowser_show_submenu = function(id) {
+	var el = $('tabbedbrowser_'+id+'_popup');
+	el.style.display="";
+	el.clonePosition("tabbed_browser_submenu_"+id,{setWidth:false,setHeight:false,offsetTop:$("tabbed_browser_submenu_"+id).getHeight()-1});
+}
+
+tabbedbrowser_hide_submenu = function(id) {
+	var el = $('tabbedbrowser_'+id+'_popup');
+	el.style.display="none";
+}

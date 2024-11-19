@@ -1,0 +1,187 @@
+who=43
+type=256
+message=Type: E_USER_ERROR (256)
+Message: mysqli error: [1054: Unknown column 'A' in 'where clause'] in EXECUTE("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+Line=79
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1054: Unknown column 'A' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))\")
+", "/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php", 79, Array ("mysqli", "EXECUTE", 1054, "Unknown column 'A' in 'where clause'", "SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", false, Object (ADODB_mysqli), "SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", false, "mysqli error: [1054: Unknown column 'A' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))\")
+"))
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1054: Unknown column 'A' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))\")
+", 256)
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1235
+    function called: ADODB_Error_Handler("mysqli", "EXECUTE", 1054, "Unknown column 'A' in 'where clause'", "SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", false, "Object (ADODB_mysqli)")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1175
+    function called: _Execute("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))")
+
+File: /home/effector2/ftp/epesi/libs/adodb/drivers/adodb-mysqli.inc.php
+    line 163
+    function called: Execute("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (150))
+
+[PHP core called function]
+    function called: GetOne("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (150))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 213
+    function called: call_user_func_array(Array (Object (ADODB_mysqli), "GetOne"), Array ("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (#1)))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 525
+    function called: call_with_retry("GetOne", Array ("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (#1)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1599
+    function called: GetOne("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = %d AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array ("150"))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 626
+    function called: get_records_count("eff_contracts", Object (Utils_RecordBrowser_Crits), false, Array (Array (#3)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 332
+    function called: show_data(Object (Utils_RecordBrowser_Crits), Array (), Array ("DESC"))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), null, null)
+
+File: /home/effector2/ftp/epesi/modules/Eff/Contracts/Contracts_0.php
+    line 44
+    function called: display_module(Object (Utils_RecordBrowser))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Eff_Contracts), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Eff_Contracts), null, null)
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 142
+    function called: display_module(Object (Eff_Contracts))
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_40d76cb6ea6e259a4df879418f1e0b2f=&submited=1&show_all_pressed=1&submit_search=Szukaj&search=2021_1600669&show_all=Poka%C5%BC%20wszystko&__action_module__=%2FBase_Box%7C0%2FEff_Contracts%7Cmain_0%2FUtils_RecordBrowser%7Ceff_contracts_module%2FUtils_GenericBrowser%7Ceff_contracts", "")
+
+
+error file=/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+error line=79
+
+error backtrace:
+[PHP core called function]
+    function called: handle_epesi_error(256, "mysqli error: [1054: Unknown column 'A' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))\")
+", "/home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php", 79, Array ("mysqli", "EXECUTE", 1054, "Unknown column 'A' in 'where clause'", "SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", false, Object (ADODB_mysqli), "SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", false, "mysqli error: [1054: Unknown column 'A' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))\")
+"))
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb-errorhandler.inc.php
+    line 79
+    function called: trigger_error("mysqli error: [1054: Unknown column 'A' in 'where clause'] in EXECUTE(\"SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))\")
+", 256)
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1235
+    function called: ADODB_Error_Handler("mysqli", "EXECUTE", 1054, "Unknown column 'A' in 'where clause'", "SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", false, "Object (ADODB_mysqli)")
+
+File: /home/effector2/ftp/epesi/libs/adodb/adodb.inc.php
+    line 1175
+    function called: _Execute("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = 150 AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))")
+
+File: /home/effector2/ftp/epesi/libs/adodb/drivers/adodb-mysqli.inc.php
+    line 163
+    function called: Execute("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (150))
+
+[PHP core called function]
+    function called: GetOne("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (150))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 213
+    function called: call_user_func_array(Array (Object (ADODB_mysqli), "GetOne"), Array ("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (#1)))
+
+File: /home/effector2/ftp/epesi/include/database.php
+    line 525
+    function called: call_with_retry("GetOne", Array ("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = ? AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array (#1)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowserCommon_0.php
+    line 1599
+    function called: GetOne("SELECT COUNT(*) FROM eff_contracts_data_1 AS r WHERE r.active=1 AND ((false OR (r.f_contract_manager = %d AND r.f_contract_manager IS NOT NULL)) AND ((r.f_contract_name LIKE A)))", Array ("150"))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 626
+    function called: get_records_count("eff_contracts", Object (Utils_RecordBrowser_Crits), false, Array (Array (#3)))
+
+File: /home/effector2/ftp/epesi/modules/Utils/RecordBrowser/RecordBrowser_0.php
+    line 332
+    function called: show_data(Object (Utils_RecordBrowser_Crits), Array (), Array ("DESC"))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Utils_RecordBrowser), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Utils_RecordBrowser), null, null)
+
+File: /home/effector2/ftp/epesi/modules/Eff/Contracts/Contracts_0.php
+    line 44
+    function called: display_module(Object (Utils_RecordBrowser))
+
+[PHP core called function]
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 924
+    function called: call_user_func_array(Array (Object (Eff_Contracts), "body"), Array ())
+
+File: /home/effector2/ftp/epesi/include/module.php
+    line 844
+    function called: get_html_of_module(Object (Eff_Contracts), null, null)
+
+File: /home/effector2/ftp/epesi/modules/Base/Box/Box_0.php
+    line 142
+    function called: display_module(Object (Eff_Contracts))
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 246
+    function called: body()
+
+File: /home/effector2/ftp/epesi/include/epesi.php
+    line 291
+    function called: go(Object (Base_Box))
+
+File: /home/effector2/ftp/epesi/process.php
+    line 38
+    function called: process("_qf__libs_qf_40d76cb6ea6e259a4df879418f1e0b2f=&submited=1&show_all_pressed=1&submit_search=Szukaj&search=2021_1600669&show_all=Poka%C5%BC%20wszystko&__action_module__=%2FBase_Box%7C0%2FEff_Contracts%7Cmain_0%2FUtils_RecordBrowser%7Ceff_contracts_module%2FUtils_GenericBrowser%7Ceff_contracts", "")
+

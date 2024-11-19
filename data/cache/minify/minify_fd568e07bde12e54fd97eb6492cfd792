@@ -1,0 +1,168 @@
+CRM_PhoneCall__form_control = {
+	form_id: '',
+	init: function (form_name, other_phone_default_checked, other_customer_default_checked) {
+		CRM_PhoneCall__form_control.form_id = '#'+form_name;
+		jq('#other_phone').change(CRM_PhoneCall__form_control.onchange_other_phone);
+		jq('#other_customer').change(CRM_PhoneCall__form_control.onchange_other_customer);
+		CRM_PhoneCall__form_control.toggle_phone(other_phone_default_checked || CRM_PhoneCall__form_control.is_checked('#other_phone'));
+		CRM_PhoneCall__form_control.toggle_customer(other_customer_default_checked || CRM_PhoneCall__form_control.is_checked('#other_customer'));
+	},
+	onchange_other_phone: function () {
+		CRM_PhoneCall__form_control.toggle_phone(CRM_PhoneCall__form_control.is_checked('#other_phone'));
+	},
+	onchange_other_customer: function () {
+		CRM_PhoneCall__form_control.toggle_customer(CRM_PhoneCall__form_control.is_checked('#other_customer'));
+	},
+	toggle_phone: function (other_phone_is_checked)	{
+		CRM_PhoneCall__form_control.toggle_element('#phone', other_phone_is_checked);
+		CRM_PhoneCall__form_control.toggle_element('#other_phone_number', !other_phone_is_checked);
+	},
+	toggle_customer: function (other_customer_is_checked)	{
+		CRM_PhoneCall__form_control.toggle_element('#customer, #__autocomplete_id_customer__search, #other_phone', other_customer_is_checked);
+		CRM_PhoneCall__form_control.toggle_element('#other_customer_name', !other_customer_is_checked);
+		if (other_customer_is_checked) {
+			jq('#other_phone', CRM_PhoneCall__form_control.form_id).prop('checked', true);
+			CRM_PhoneCall__form_control.toggle_phone(true);
+		}
+	},
+	is_checked: function (element_id) {
+		return jq(element_id, CRM_PhoneCall__form_control.form_id).is(':checked');
+	},
+	toggle_element: function (element_selector, disabled) {
+		jq(element_selector, CRM_PhoneCall__form_control.form_id).prop('disabled', disabled);
+	}
+}
+
+;var ChainedSelect = Class.create();
+ChainedSelect.prototype = {
+	prev_ids:null,
+	dest_id:null,
+	params:null,
+	default_val:null,
+	request_f:null,
+	clear_f:null,
+	load_def_f:null,
+	stop_f:null,
+	loads:0,
+	initialize:function(dest_id,prev_ids,params,def_val) {
+		var dest = $(dest_id);
+		if(dest==null)return;
+		this.prev_ids = prev_ids;
+		this.dest_id = dest_id;
+		this.params = params;
+		this.default_val = def_val;
+		var prev_obj = prev_ids[prev_ids.length-1];
+		this.request_f = this.request.bindAsEventListener(this);
+		this.clear_f = this.clear.bindAsEventListener(this);
+		Event.observe(prev_obj,'change',this.request_f);
+		Event.observe(prev_obj,'e_cs:load',this.request_f);
+		Event.observe(prev_obj,'e_cs:clear',this.clear_f);
+		this.stop_f = this.stop.bindAsEventListener(this);
+		Event.observe(document,'e:load',this.stop_f);
+		if(prev_ids.length==1) {
+			this.load_def_f = this.load_def.bindAsEventListener(this);
+			Event.observe(document,'e:load',this.load_def_f);
+		}
+	},
+	load_def:function() {
+		this.request();
+	},
+	clear:function(){
+		obj.options.length=0;
+		obj.fire('e_cs:clear');
+	},
+	stop:function(){
+		this.loads++;
+		if(this.loads==2) {
+			var prev_obj = this.prev_ids[this.prev_ids.length-1];
+			if($(prev_obj)!=null) {
+				Event.stopObserving(prev_obj,'change',this.request_f);
+				Event.stopObserving(prev_obj,'e_cs:load',this.request_f);
+				Event.stopObserving(prev_obj,'e_cs:clear',this.clear_f);
+			}
+			if(this.prev_ids.length==1)
+				Event.stopObserving(document,'e:load',this.load_def_f);
+			Event.stopObserving(document,'e:load',this.stop_f);
+		}
+	},
+	request:function() {
+		var vals = new Hash();
+		if(this.default_val!=null) {
+			var def_val = this.default_val;
+			this.default_val = null;
+		}
+		for(x in this.prev_ids) {
+			var p = $(this.prev_ids[x]);
+			if(p==null) return;
+			vals.set(this.prev_ids[x],p.value);
+		}
+		var dest_id = this.dest_id;
+		new Ajax.Request('modules/Utils/ChainedSelect/req.php', {
+			method: 'post',
+			parameters:{
+				values:Object.toJSON(vals),
+				dest_id:dest_id,
+				parameters:Object.toJSON(this.params),
+				defaults:Object.toJSON(def_val),
+				cid: Epesi.client_id
+			},
+			onSuccess:function(t) {
+				var new_opts = t.responseText.evalJSON();
+				var obj = $(dest_id);
+				var opts = obj.options;
+                if(new_opts == false) {
+                    obj.setAttribute("oldDisplayValue", obj.style.display);
+                //    obj.style.display = "none";
+                    return;
+                } else {
+                 //   var val = obj.getAttribute("oldDisplayValue");
+                 //   if(val != undefined)
+                        obj.style.display = "block";
+                }
+				while(opts.length > 0) obj.remove(0);
+				if(new_opts.length==0) {
+					obj.fire('e_cs:clear');
+                    obj.disabled = true;
+				} else {
+                    obj.disabled = false;
+					if(Object.isArray(new_opts)) {
+						for(y=0; y<new_opts.length; y++) {
+							if(typeof new_opts[y].key != "undefined" && typeof new_opts[y].caption != "undefined")
+								opts[opts.length] = new Option(new_opts[y].caption,new_opts[y].key);
+							else
+								opts[opts.length] = new Option(new_opts[y],y);
+						}
+					} else {
+						for(y in new_opts) {
+							opts[opts.length] = new Option(new_opts[y],y);
+						}
+					}
+					if(typeof def_val != 'undefined')
+						obj.value = def_val;
+					else
+						obj.value = '';
+					jq(obj).change();
+					setTimeout(obj.fire.bind(obj,'e_cs:load'),1);
+				}
+			}
+		});
+	}
+};
+;utils_watchdog_set_subscribe = function(state,cat,id,element) {
+	if (!JSON) return;	
+	jq('#'+element).html('...');
+	jq.ajax({
+		type: 'POST',
+		url: 'modules/Utils/Watchdog/subscribe.php', 
+		data:{
+			cat:JSON.stringify(cat),
+			id:JSON.stringify(id),
+			state:JSON.stringify(state),
+			element:JSON.stringify(element),
+			cid: Epesi.client_id
+		},
+		success:function(t) {
+			eval(t);
+		}
+	});
+};

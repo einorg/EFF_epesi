@@ -1,0 +1,18 @@
+who=45
+type=64
+message=Type: E_COMPILE_ERROR (64)
+Message: Cannot use empty array elements in arrays
+File: C:\xampp\htdocs\epesi\modules\Eff\Orders\OrdersInstall.php
+Line=27
+error backtrace:
+[PHP core called function]
+    function called: check_for_fatal()
+
+
+error file=C:\xampp\htdocs\epesi\modules\Eff\Orders\OrdersInstall.php
+error line=27
+
+error backtrace:
+[PHP core called function]
+    function called: check_for_fatal()
+

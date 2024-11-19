@@ -1,0 +1,526 @@
+var objs = new Array();
+var order = new Array();
+var now = 0;
+/*
+ * possible states:
+ *  -3 - uninitialized
+ *  -2 - closed with buttons
+ *  -1 - closed with text input
+ *   1 - showed with text input
+ *   2 - showed with buttons
+ */
+var state = {uninitialized: -3, closed: -1, showed: 1, buttons: 2};
+var c2fstate = state.uninitialized;
+var c2flabel = "";
+var c2fmessage = "";
+
+function initc2f(label, message) {
+    includeCSS('modules/Utils/RecordBrowser/click2fill.css');
+    objs = new Array();
+    order = new Array();
+    now = 0;
+    c2fstate = state.uninitialized;
+	c2flabel = label;
+	c2fmessage = message;
+}
+function includeCSS(p_file) {
+	var v_css  = document.createElement('link');
+	v_css.rel = 'stylesheet'
+	v_css.type = 'text/css';
+	v_css.href = p_file;
+	document.getElementsByTagName('head')[0].appendChild(v_css);
+}
+function changeSelection(x) {
+    if(objs[x] == true) {
+        document.getElementById('o'+x).innerHTML = '';
+        document.getElementById(x).className = '';
+        objs[x] = false;
+    } else {
+        document.getElementById('o'+x).innerHTML = now+1;
+        document.getElementById(x).className = 'selected';
+        objs[x] = true;
+    }
+}
+function manipulateArray(x) {
+    if(objs[x] == true) {
+        var nr = document.getElementById('o'+x).innerHTML-1;
+        order.splice(nr,1);
+        for(var i = nr; i < order.length; i++) {
+            document.getElementById('o'+order[i]).innerHTML = i+1;
+        }
+        now--;
+        changeSelection(x);
+    } else {
+        order[now] = x;
+        changeSelection(x);
+        now++;
+    }
+}
+function c2f() {
+    if(c2fstate == state.uninitialized) {
+        if(document.getElementById("c2fBox") == undefined) {
+            alert("This template is not compatible with Click 2 Fill function");
+            return;
+        }
+        document.getElementById("c2fBox").innerHTML = '<table><tr><td><textarea id="c2ftxt" rows="5" cols="100">'+c2fmessage+'</textarea><div id="c2fs"></div></td><td><input type="button" class="button" onclick="c2fScan()" value="'+c2flabel+'" style="margin:20px"/></td></tr></table>';
+        c2fstate = state.closed;
+        var el = document.getElementsByTagName("input");
+        for(var i = 0; i < el.length; i++) {
+            if(el[i].type == 'text') {
+                var functxt = String(el[i].onclick);
+                if(functxt.indexOf('c2fstate') != -1) continue;
+                el[i].oldonclick = (el[i].onclick)?el[i].onclick:function(){};
+                el[i].onclick = function () {
+                    this.oldonclick();if(c2fstate == state.buttons && order.length > 0) this.value = copyText();
+                };
+            }
+        }
+        el = document.getElementsByTagName("textarea");
+        for(i = 0; i < el.length; i++) {
+            if(el[i].id != 'c2ftxt') {
+                el[i].oldonclick = (el[i].onclick)?el[i].onclick:function(){};
+                el[i].onclick = function() {
+                    this.oldonclick();if(c2fstate == state.buttons && order.length > 0) this.innerHTML = copyText();
+                };
+            }
+        }
+    }
+    if(c2fstate <= 0) { // state.closed or closed with buttons
+        document.getElementById("c2fBox").style.display = 'block';
+        var tmp = document.getElementById("c2ftxt");
+        tmp.focus();
+        tmp.select();
+        c2fstate = -c2fstate;
+    } else { // state.showed
+        document.getElementById("c2fBox").style.display = 'none';
+        c2fstate = -c2fstate;
+    }
+}
+function c2fScan() {
+    if(c2fstate == state.showed) {
+        var words = document.getElementById("c2ftxt").value.split(new RegExp("[, \n\t]"));
+        document.getElementById("c2fs").innerHTML = '';
+        for(var i = 0; i < words.length; i++) {
+            if(words[i].length == 0) continue;
+            var id = 'c2f'+i;
+            document.getElementById("c2fs").innerHTML += '<div id="'+id+'" onclick="manipulateArray(\''+id+'\')">'+words[i]+'</div><span id="o'+id+'"></span>';
+            objs[id] = false;
+        }
+        document.getElementById("c2fs").style.display = 'block';
+        document.getElementById("c2ftxt").style.display = 'none';
+        c2fstate = state.buttons;
+        now = 0;
+        order = new Array();
+    } else {
+        var tmp = document.getElementById("c2ftxt");
+        tmp.style.display = 'block';
+        tmp.focus();
+        tmp.select();
+        document.getElementById("c2fs").style.display = 'none';
+        c2fstate = state.showed;
+    }
+}
+function copyText() {
+    var arr = new Array();
+    for(var i = 0; i < order.length; i++) {
+        arr[i] = document.getElementById(order[i]).innerHTML;
+        changeSelection(order[i]);
+    }
+    order = new Array();
+    now = 0;
+    return(arr.join(' '));
+}
+;function fnSelect(obj) {
+    fnDeSelect();
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(obj);
+        range.select();
+    }
+    else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(obj);
+        window.getSelection().addRange(range);
+    }
+}
+
+function fnDeSelect() {
+    if (document.selection) document.selection.empty();
+    else if (window.getSelection)
+        window.getSelection().removeAllRanges();
+}
+
+;automulti_remove_button_update = function (element) {
+	list = document.getElementsByName(element+"__display")[0];
+	i = 0;
+	while (i!=list.options.length) {
+		if (list.options[i].selected) {
+			$("automulti_button_style_"+element).setAttribute("class","button enabled");
+			break;
+		}
+		i++;
+	}
+	if (i==list.options.length) $("automulti_button_style_"+element).setAttribute("class","button disabled");
+}
+
+automulti_remove_button_action = function (element, list_sep) {
+	list = document.getElementsByName(element+"__display")[0];
+	val_holder = $(element+'__var_holder');
+	i = 0;
+	val_holder.value = "";
+	while (i!=list.options.length) {
+		if (list.options[i].selected) {
+			list.options[i] = null;
+		} else {
+			val_holder.value += list_sep;
+			val_holder.value += list.options[i].value;
+			i++;
+		}
+	}
+	automulti_remove_button_update(element);
+}
+
+automulti_on_hide = function (element, list_sep) {
+	var new_value=$("__autocomplete_id_"+element+"__search").value.split('__');
+	if (new_value && typeof(new_value[1])!="undefined") {
+		$("__autocomplete_id_"+element+"__search").value="";
+		automulti_add_value(element, list_sep, new_value[0], new_value[1]);
+	}
+}
+
+automulti_add_value = function (element, list_sep, value, label) {
+	list = document.getElementsByName(element+"__display")[0];
+	i = 0;
+	while (i!=list.options.length) {
+		if (list.options[i].value==value) {
+			value=null;
+			break;
+		}
+		i++;
+	}
+	if (value!=null) {
+		list.options[i] = new Option();
+		list.options[i].value = value;
+		list.options[i].text = label;
+		if(typeof iphone != "undefined") list.options[i].selected = true;
+		val_holder = $(element+'__var_holder');
+		val_holder.value = val_holder.value + list_sep + value;
+	}
+}
+
+;ms_remove_selected = function(myName, list_sep){
+	var tolist = document.getElementsByName(myName+"to[]")[0];
+	var fromlist = document.getElementsByName(myName+"from[]")[0];
+	var list_result = "";
+	var k = 0;
+	var i = 0;
+	while (k!=tolist.options.length) {
+		if (tolist.options[k].selected) {
+			while (i!=fromlist.options.length && fromlist.options[i].value<tolist.options[k].value) 
+				i++;
+			jj = fromlist.length;
+			fromlist.options[jj] = new Option();
+			for( j = jj; j > i; j-- ) {
+				fromlist.options[j].text = fromlist.options[j-1].text;
+				fromlist.options[j].value = fromlist.options[j-1].value;
+			}
+			fromlist.options[i].value = tolist.options[k].value;
+			fromlist.options[i].text = tolist.options[k].text;
+		} else {
+			list_result += list_sep+tolist.options[k].value;
+		}
+		k++;
+	}
+	for(i = (tolist.length-1); i >= 0; i--) {
+		if(tolist.options[i].selected == true) {
+			tolist.options[i] = null;
+		}
+	}
+	document.getElementsByName(myName)[0].value=list_result;
+};
+
+ms_add_selected = function(myName, list_sep){ 
+	var tolist = document.getElementsByName(myName+"to[]")[0];
+	var fromlist = document.getElementsByName(myName+"from[]")[0];
+	var list_result = "";
+	var k = 0;
+	var i = 0;
+	while (k!=fromlist.length) {
+		if (fromlist.options[k].selected) {
+			while(i < tolist.length && tolist.options[i].value<fromlist.options[k].value) 
+				i++;
+			jj = tolist.length;
+			tolist.options[jj] = new Option();
+			for( j = jj; j > i; j-- ) {
+				tolist.options[j].value = tolist.options[j-1].value;
+				tolist.options[j].text = tolist.options[j-1].text;
+			}
+			tolist.options[i].value = fromlist.options[k].value;
+			tolist.options[i].text = fromlist.options[k].text;
+		}
+		k++;
+	}
+	for(i = (fromlist.length-1); i >= 0; i--) {
+		if(fromlist.options[i].selected == true) {
+			fromlist.options[i] = null;
+		}
+	}
+	k = 0;
+	while (k!=tolist.length) { 
+		list_result += list_sep+tolist.options[k].value; 
+		k++; 
+	}
+	document.getElementsByName(myName)[0].value=list_result; 
+};
+
+ms_remove_all = function(myName, list_sep){ 
+	var tolist = document.getElementsByName(myName+"to[]")[0];
+	var fromlist = document.getElementsByName(myName+"from[]")[0];
+	var list_result = "";
+	var k = 0;
+	var i = 0;
+	while (k!=tolist.options.length) {
+		if (tolist.options[k].disabled) {
+			k++;
+			continue;
+		}
+		while (i!=fromlist.options.length && fromlist.options[i].value<tolist.options[k].value) 
+			i++;
+		jj = fromlist.length;
+		fromlist.options[jj] = new Option();
+		for( j = jj; j > i; j-- ) {
+			fromlist.options[j].text = fromlist.options[j-1].text;
+			fromlist.options[j].value = fromlist.options[j-1].value;
+		}
+		fromlist.options[i].value = tolist.options[k].value;
+		fromlist.options[i].text = tolist.options[k].text;
+		k++;
+	}
+	for(i = (tolist.length-1); i >= 0; i--) {
+		if (!tolist.options[i].disabled) tolist.options[i] = null;
+	}
+	document.getElementsByName(myName)[0].value=list_result;
+};
+
+ms_add_all = function(myName, list_sep){ 
+	var tolist = document.getElementsByName(myName+"to[]")[0];
+	var fromlist = document.getElementsByName(myName+"from[]")[0];
+	var k = 0;
+	var i = 0;
+	var list_result = "";
+	while (k!=fromlist.length) {
+		if (fromlist.options[k].disabled) {
+			k++;
+			continue;
+		}
+		while(i < tolist.length && tolist.options[i].value<fromlist.options[k].value) 
+			i++;
+		jj = tolist.length;
+		tolist.options[jj] = new Option();
+		for( j = jj; j > i; j-- ) {
+			tolist.options[j].value = tolist.options[j-1].value;
+			tolist.options[j].text = tolist.options[j-1].text;
+		}
+		tolist.options[i].value = fromlist.options[k].value;
+		tolist.options[i].text = fromlist.options[k].text;
+		k++;
+	}
+	for(i = (fromlist.length-1); i >= 0; i--) {
+		if (!fromlist.options[i].disabled) fromlist.options[i] = null;
+	}
+	k = 0;
+	while (k!=tolist.length) { 
+		list_result += list_sep+tolist.options[k].value; 
+		k++; 
+	}
+	document.getElementsByName(myName)[0].value=list_result; 
+};
+
+;var Utils_CommonData = Class.create();
+Utils_CommonData.prototype = {
+	obj:null,
+	path:null,
+	add_empty:null,
+	order:'',
+	def_val:'',
+	initialize: function(id,val,cd,ae,order) {
+		this.obj = $(id);
+		if(this.obj==null) return;
+		this.path = cd.evalJSON();
+		this.add_empty = ae;
+		this.def_val = val;
+		this.order = order;
+		var obj = this.obj;
+		var prev_obj = eval('obj.form.'+this.path[this.path.length-1]);
+		Event.observe(prev_obj,'change',this.request.bindAsEventListener(this));
+		Event.observe(prev_obj,'e_u_cd:load',this.request.bindAsEventListener(this));
+		Event.observe(prev_obj,'e_u_cd:clear',function(){obj.options.length=0;obj.fire('e_u_cd:clear');});
+
+		this.first_request_bind = this.first_request.bindAsEventListener(this);
+		if(this.path.length==2)
+			Event.observe(document,'e:load',this.first_request_bind);
+	},
+
+	first_request: function(e) {
+		Event.stopObserving(document,'e:load',this.first_request_bind);
+//		alert('first');
+		this.request(null);
+	},
+	first_request_bind:null,
+
+	request: function(e) {
+		var obj = this.obj;
+//		alert('request '+obj.name);
+		obj.options.length=0;
+		var curr_root = this.path[0];
+		for(var i=1; i<this.path.length; i++) {
+			var val = eval('obj.form.'+this.path[i]).value;
+			if(val=='') {
+				this.obj.options.length=0;
+				this.obj.fire('e_u_cd:clear');
+//				setTimeout(this.obj.fire.bind(this.obj,'e_u_cd:clear'),1);
+				return;
+			}
+			curr_root += '/' + val;
+		}
+		new Ajax.Request('modules/Utils/CommonData/update.php',{
+				method:'post',
+				parameters:{
+					value: curr_root,
+					order: this.order
+				},
+				onSuccess: this.on_request.bind(this)
+			});
+	},
+	on_request: function(t) {
+		if (!t.responseText) return;
+		var new_opts = t.responseText.evalJSON();
+		var opts = this.obj.options;
+		opts.length=0;
+		if(new_opts.length==0) {
+			this.obj.fire('e_u_cd:clear');
+		} else {
+			if(this.add_empty==1) opts[0] = new Option('---','');
+			jq.each(new_opts, function(index, value) {opts[opts.length] = new Option(value,index);});
+			if(this.def_val!='') {
+				this.obj.value = this.def_val;
+				this.def_val='';
+			} else
+				this.obj.value = opts[0].value;
+//			alert('fire='+this.obj.name+' valyx='+opts[0].value);
+//			this.obj.fire('e_u_cd:load');
+			setTimeout(this.obj.fire.bind(this.obj,'e_u_cd:load'),1);
+			jq(this.obj).change();
+		}
+	}
+};
+
+var Utils_CommonData_freeze = Class.create();
+Utils_CommonData_freeze.prototype = {
+	obj:null,
+	path:null,
+	id:null,
+	initialize: function(id,cd) {
+		this.id = id;
+		this.obj = $(id);
+		if(this.obj==null) return;
+		this.path = cd.evalJSON();
+		var obj = this.obj;
+		var prev_obj = eval('obj.form.'+this.path[this.path.length-1]);
+		if(this.path.length>2)
+			Event.observe(prev_obj,'e_u_cd:load',this.request.bindAsEventListener(this));
+
+		this.first_request_bind = this.first_request.bindAsEventListener(this);
+		if(this.path.length==2)
+			Event.observe(document,'e:load',this.first_request_bind);
+	},
+
+	first_request: function(e) {
+		Event.stopObserving(document,'e:load',this.first_request_bind);
+		//alert('first');
+		this.request(null);
+	},
+	first_request_bind:null,
+
+	request: function(e) {
+		var obj = this.obj;
+		var curr_root = this.path[0];
+		for(var i=1; i<this.path.length; i++) {
+			var val = eval('obj.form.'+this.path[i]).value;
+			if(val=='') {
+				$(this.id+'_label').innerHTML = '---';
+				setTimeout(this.obj.fire.bind(this.obj,'e_u_cd:load'),1);
+				return;
+			}
+			curr_root += '/' + val;
+		}
+		if(this.obj.value=='') {
+			$(this.id+'_label').innerHTML = '---';
+			setTimeout(this.obj.fire.bind(this.obj,'e_u_cd:load'),1);
+			return;
+		}
+		curr_root += '/' + this.obj.value;
+//		alert('request '+obj.name+'; root '+curr_root);
+		new Ajax.Request('modules/Utils/CommonData/update_freeze.php',{
+				method:'post',
+				parameters:{
+					value: curr_root
+				},
+				onSuccess: this.on_request.bind(this)
+			});
+	},
+	on_request: function(t) {
+		if (!t.responseText) return;
+		var val = t.responseText.evalJSON();
+		$(this.id+'_label').innerHTML = val;
+		setTimeout(this.obj.fire.bind(this.obj,'e_u_cd:load'),1);
+	}
+};
+
+;tabbed_browser_switch = function(id,max,elem,path){
+	var x = $(path+"_d"+id);
+	var parent_menu;
+	if(x) {
+		for(var i=0; i<max; i++){
+			var y = $(path+"_d"+i);
+			if(y) y.style.display="none";
+			$(path+"_c"+i).className="tabbed_browser_unselected";
+			parent_menu = $(path+"_c"+i).getAttribute("parent_menu")
+			if (parent_menu)
+				$("tabbed_browser_submenu_"+parent_menu).className="tabbed_browser_unselected";
+		}
+		x.style.display="block";
+		$(path+"_c"+id).className="tabbed_browser_selected";
+		parent_menu = $(path+"_c"+id).getAttribute("parent_menu")
+		if (parent_menu)
+			$("tabbed_browser_submenu_"+parent_menu).className="tabbed_browser_selected";
+	} else eval(elem.getAttribute("original_action"));
+};
+
+tabbed_browser_hide = function(path,id){
+	var x = $(path+"_d"+id);
+	var y = $(path+"_c"+id);
+	if(x && y) {
+		x.hide();
+		y.hide();
+	}
+};
+
+tabbed_browser_show = function(path,id){
+	var x = $(path+"_d"+id);
+	var y = $(path+"_c"+id);
+	if(x && y) {
+		x.show();
+		y.show();
+	}
+};
+;tabbedbrowser_show_submenu = function(id) {
+	var el = $('tabbedbrowser_'+id+'_popup');
+	el.style.display="";
+	el.clonePosition("tabbed_browser_submenu_"+id,{setWidth:false,setHeight:false,offsetTop:$("tabbed_browser_submenu_"+id).getHeight()-1});
+}
+
+tabbedbrowser_hide_submenu = function(id) {
+	var el = $('tabbedbrowser_'+id+'_popup');
+	el.style.display="none";
+}

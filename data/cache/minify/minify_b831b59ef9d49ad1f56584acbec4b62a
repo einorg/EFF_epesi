@@ -1,0 +1,39 @@
+utils_watchdog_set_subscribe = function(state,cat,id,element) {
+	if (!JSON) return;	
+	jq('#'+element).html('...');
+	jq.ajax({
+		type: 'POST',
+		url: 'modules/Utils/Watchdog/subscribe.php', 
+		data:{
+			cat:JSON.stringify(cat),
+			id:JSON.stringify(id),
+			state:JSON.stringify(state),
+			element:JSON.stringify(element),
+			cid: Epesi.client_id
+		},
+		success:function(t) {
+			eval(t);
+		}
+	});
+};
+
+;utils_attachment_get_link = function(attach_file_id,cidd,desc) {
+	new Ajax.Request('modules/Utils/Attachment/create_remote.php', {
+		method: 'post',
+		parameters: {
+			file: attach_file_id,
+			cid: cidd,
+			description: desc
+		},
+		onComplete: function(t) {
+			prompt('Url to this file (valid for 1 week)',t.responseText);
+		},
+		onException: function(t,e) {
+			throw(e);
+		},
+		onFailure: function(t) {
+			alert('Failure ('+t.status+')');
+			Epesi.text(t.responseText,'error_box','p');
+		}
+	});
+};
